@@ -1,8 +1,10 @@
+call pathogen#infect()
 set nocompatible
 set encoding=utf-8
-
-syntax on
+syntax enable
+filetype plugin indent on
 colorscheme solarized
+set background=dark
 
 set wildmenu
 set wildmode=list:longest
@@ -44,4 +46,3 @@ nmap <c-p> :echo synIDattr(synID(line("."), col("."), 1), "name") <CR>
 
 hi StatusLine ctermbg=green
 hi MatchParen ctermbg=green
-filetype plugin indent on
