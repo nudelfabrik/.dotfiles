@@ -1,0 +1,12 @@
+[user]
+	name = Nudelfabrik
+	email = nudelfabrik@googlemail.com
+[core]
+	quotepath = false
+[alias]
+	st = status
+	stat = status
+	unstage = reset HEAD --
+	last = log -1 HEAD
+[color]
+	ui = true
