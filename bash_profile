@@ -5,6 +5,6 @@ echo -e ""
 echo -e "Today is "; date
 
 #source
-source ~/.dotfiles/git-completion.bash
-source ~/.dotfiles/bash_alias
-source  ~/.dotfiles/bash_function
+source ~/.dotfiles/bash/git-completion.bash
+source ~/.dotfiles/bash/bash_alias
+source  ~/.dotfiles/bash/bash_function
