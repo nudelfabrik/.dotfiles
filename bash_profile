@@ -6,7 +6,7 @@ echo -e "Today is "; date
 
 #source
 source ~/.dotfiles/git-completion.bash
-source ~/.bash_alias
+source ~/.dotfiles/bash_alias
 
 
 # console
