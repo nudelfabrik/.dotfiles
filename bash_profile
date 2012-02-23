@@ -7,16 +7,4 @@ echo -e "Today is "; date
 #source
 source ~/.dotfiles/git-completion.bash
 source ~/.dotfiles/bash_alias
-
-
-# console
-function console () {
-  if [[ $# > 0 ]]; then
-    query=$(echo "$*"|tr -s ' ' '|')
-    tail -f /var/log/system.log|grep -i --color=auto -E "$query"
-  else
-    tail -f /var/log/system.log
-  fi
-}
-
-
+source  ~/.dotfiles/bash_function
