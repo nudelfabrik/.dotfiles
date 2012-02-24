@@ -1,6 +1,7 @@
 #common
 alias home='cd ~'
 alias lsa='ls -a'
+alias ..="cd .."
 alias la='ls -a'
 alias vi='vim'
 
@@ -28,3 +29,5 @@ alias gitstat='git stat'
 alias gadd='git add .'
 alias gcmt='git commit'
 alias glg='git log'
+alias gp='git push'
+alias gpush='git push'
