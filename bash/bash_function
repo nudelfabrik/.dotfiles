@@ -1,4 +1,4 @@
-# console
+# console by Brett Terpstra http://brettterpstra.com/a-simple-but-handy-bash-function-console/
 function console () {
   if [[ $# > 0 ]]; then
     query=$(echo "$*"|tr -s ' ' '|')
