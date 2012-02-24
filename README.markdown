@@ -6,7 +6,7 @@ Dotfiles README
 1. save old files
    * `mkdir ~/backup | mv ~/.bash_profile ~/.vim ~/.vimrc ~/.screenrc backup`
 2. get this repository from github 
-    * `mkdir ~/.dotfiles | cd ~/.dotfiles | git clone https://nudelfabrik@github.com/nudelfabrik/.dotfiles.git`
+    * `mkdir ~/.dotfiles | cd ~/.dotfiles | git clone git@github.com:nudelfabrik/.dotfiles.git`
 
 3. symlinks
     * `ln -s ~/.dotfiles/bash_profile ~/.bash_profile`
