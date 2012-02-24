@@ -3,6 +3,7 @@
 	email = nudelfabrik@googlemail.com
 [core]
 	quotepath = false
+	editor = vim
 [alias]
 	st = status
 	stat = status
