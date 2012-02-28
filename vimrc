@@ -1,9 +1,10 @@
-call pathogen#infect()
+call pathogen#runtime_append_all_bundles()
+filetype off
+syntax on
+filetype plugin indent on
 set nocompatible
 set encoding=utf-8
-syntax enable
-filetype plugin indent on
-colorscheme solarized
+"" colorscheme solarized
 set background=dark
 
 set wildmenu
