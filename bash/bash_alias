@@ -5,9 +5,11 @@ alias ..="cd .."
 alias la='ls -a'
 alias vi='vim'
 
+#Linux
+alias install='sudo apt-get install'
 #dotfiles 
 alias dotfiles='cd ~/.dotfiles'
-alias bashprofile='screen -t bash_profile vi -O ~/.bash_profile ~/.dotfiles/bash/bash_alias'
+alias bashprofile='screen -t bash_profile vi -O ~/.bashrc ~/.dotfiles/bash/bash_alias'
 alias screenrc='screen -t screenrc vi ~/.screenrc'
 alias vimrc='screen -t vimrc vi ~/.vimrc'
 
