@@ -4,7 +4,7 @@ syntax on
 filetype plugin indent on
 set nocompatible
 set encoding=utf-8
-"" colorscheme solarized
+colorscheme solarized
 set background=dark
 
 set wildmenu
