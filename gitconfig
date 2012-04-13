@@ -9,5 +9,7 @@
 	stat = status
 	unstage = reset HEAD --
 	last = log -1 HEAD
+    lg = log --pretty=format:"%h %ad | %s%d" --graph --date=short
+    cmt = commit
 [color]
 	ui = true
