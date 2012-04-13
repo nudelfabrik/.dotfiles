@@ -7,6 +7,7 @@ alias vi='vim'
 
 #Linux
 alias install='sudo apt-get install'
+
 #dotfiles 
 alias dotfiles='cd ~/.dotfiles'
 alias bashprofile='screen -t bash_profile vi -O ~/.bashrc ~/.dotfiles/bash/bash_alias'
@@ -30,6 +31,6 @@ alias gstat='git stat'
 alias gitstat='git stat'
 alias gadd='git add .'
 alias gcmt='git commit'
-alias glg='git log'
+alias glg='git log --pretty=format:"%h %ad | %s%d" --graph --date=short'
 alias gp='git push'
 alias gpush='git push'
