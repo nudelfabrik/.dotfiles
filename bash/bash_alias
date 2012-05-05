@@ -1,12 +1,11 @@
 #common
 alias home='cd ~'
 alias lsa='ls -a'
-alias ..="cd .."
+alias ..='cd ..'
+alias cd..='cd ..'
 alias la='ls -a'
 alias vi='vim'
 
-#Dayone
-alias dayone='/Applications/Day\ One.app/Contents/MacOS/dayone'
 #dotfiles 
 alias dotfiles='cd ~/.dotfiles'
 alias bashprofile='screen -t bash_profile vi -O ~/.bash_profile ~/.dotfiles/bash/bash_alias'
