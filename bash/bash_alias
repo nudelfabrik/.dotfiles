@@ -6,6 +6,8 @@ alias cd..='cd ..'
 alias la='ls -a'
 alias vi='vim'
 
+#dayone
+alias log="/Scripts/logtodayone.rb"
 #dotfiles 
 alias dotfiles='cd ~/.dotfiles'
 alias bashprofile='screen -t bash_profile vi -O ~/.bash_profile ~/.dotfiles/bash/bash_alias'
