@@ -6,6 +6,8 @@ filetype plugin indent on
 colorscheme solarized
 set background=dark
 
+au BufNewFile,BufRead *.fish set filetype=conf
+
 set wildmenu
 set wildmode=list:longest
 set visualbell
@@ -28,11 +30,11 @@ set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 set gdefault                    " regex /g at end
 set showmatch
-nnoremap <leader><space> :noh<cr>
 
 "" Mapleader
 let mapleader="-"
 nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <leader><space> :noh<cr>
 
 "" remap
 inoremap jj <ESC>
