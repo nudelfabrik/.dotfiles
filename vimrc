@@ -3,7 +3,7 @@ set nocompatible
 set encoding=utf-8
 syntax enable
 filetype plugin indent on
-colorscheme solarized
+colorscheme smyck
 set background=dark
 
 au BufNewFile,BufRead *.fish set filetype=conf
