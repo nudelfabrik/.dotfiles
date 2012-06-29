@@ -14,6 +14,7 @@ Dotfiles README
     * `ln -s ~/.dotfiles/vimrc ~/.vimrc`
     * `ln -s ~/.dotfiles/gitconfig ~/.gitconfig`
     * `ln -s ~/.dotfiles/screenrc ~/.screenrc`
+    * `mkdir ~/.vimtmp`
 
 ## LIST OF FILES
 * bash_profile
