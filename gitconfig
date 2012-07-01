@@ -30,5 +30,3 @@
     history=log
 [color]
 	ui = true
-[credential]
-	helper = osxkeychain
