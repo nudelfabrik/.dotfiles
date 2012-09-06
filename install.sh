@@ -2,8 +2,7 @@
 
 # backup
 mkdir ~/backup 
-mv ~/.bash_profile ~/.vim ~/.vimrc ~/.screenrc backup
-
+mv ~/.bash_profile ~/.vim ~/.vimrc ~/.gitconfig ~/.screenrc ~/backup
 # get dotfiles
 mkdir ~/.dotfiles
 cd ~/.dotfiles
