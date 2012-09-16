@@ -5,6 +5,8 @@ if [ -n "$SSH_CLIENT" ]; then
 
 fi
 export PS2="\[\e[0;33m\]>"
+PATH=$PATH:/usr/games/bin/
+export PATH
 echo -e "Welcome on "; hostname
 echo -e ""
 echo -e "Today is "; date
