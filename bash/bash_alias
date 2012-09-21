@@ -8,6 +8,7 @@ alias vi='vim'
 
 #dayone
 alias log="/Scripts/logtodayone.rb"
+
 #dotfiles 
 alias dotfiles='cd ~/.dotfiles'
 alias bashprofile='screen -t bash_profile vi -O ~/.bash_profile ~/.dotfiles/bash/bash_alias'
@@ -15,6 +16,7 @@ alias screenrc='screen -t screenrc vi ~/.screenrc'
 alias vimrc='screen -t vimrc vi ~/.vimrc'
 
 alias mount_tatooine='mount_smbfs //TATOOINE/Users/Bene/Pictures/Pictures/MP\ Navigator\ EX /Users/Bene/Pictures/scanner/'
+alias neth='screen -t nethack /usr/games/bin/nethack'
 
 #minecraft
 alias mine_extract='cd ~/Desktop/ ; mkdir mctmp ; cd mctmp ; jar xf ~/Library/Application\ Support/minecraft/bin/minecraft.jar'
