@@ -2,7 +2,7 @@
 
 # backup
 mkdir ~/dotfiles_backup 
-mv ~/.bash_profile ~/.vim ~/.vimrc ~/.gitconfig ~/.screenrc ~/backup
+mv ~/.bash_profile ~/.vim ~/.vimrc ~/.gitconfig ~/.tmux.conf ~/.screenrc ~/backup
 # get dotfiles
 mkdir ~/.dotfiles
 cd ~/.dotfiles
@@ -14,4 +14,5 @@ ln -s ~/.dotfiles/vim ~/.vim
 ln -s ~/.dotfiles/vimrc ~/.vimrc
 ln -s ~/.dotfiles/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/screenrc ~/.screenrc
+ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 mkdir ~/.vimtmp
