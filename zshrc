@@ -17,7 +17,7 @@ DEFAULT_USER="Bene"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.dotfiles/zsh_alias
 # Set to this to use case-sensitive completion
-CASE_SENSITIVE="true"
+#  CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
