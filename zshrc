@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+ZSH=$HOME/.dotfiles/oh-my-zsh
 
 
 echo -e "Welcome in "; hostname
