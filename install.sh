@@ -2,12 +2,7 @@
 
 # backup
 mkdir ~/dotfiles_backup 
-mv ~/.bash_profile ~/.vim ~/.vimrc ~/.gitconfig ~/.tmux.conf ~/.screenrc ~/backup
-# get dotfiles
-mkdir ~/.dotfiles
-cd ~/.dotfiles
-git clone git@github.com:nudelfabrik/.dotfiles.git
-
+mv ~/.bash_profile ~/.vim ~/.vimrc ~/.gitconfig ~/.tmux.conf ~/.screenrc ~/dotfiles_backup
 # make symlinks
 ln -s ~/.dotfiles/bash_profile ~/.bash_profile
 ln -s ~/.dotfiles/vim ~/.vim
