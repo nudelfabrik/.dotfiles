@@ -20,7 +20,7 @@ alias ..='cd ..'
 alias cd..='cd ..'
 alias la='ls -a'
 alias vi='vim'
-
+alias rmr='rm -r'
 #dayone
 alias log="/Scripts/logtodayone.rb"
 
