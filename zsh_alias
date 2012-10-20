@@ -14,6 +14,7 @@ function console () {
 
 #old bash
 #common
+alias instalist='python /usr/local/bin/readinglist2instapaper.py'
 alias home='cd ~'
 alias lsa='ls -a'
 alias ..='cd ..'
