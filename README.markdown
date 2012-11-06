@@ -7,6 +7,8 @@ Dotfiles README
    * `mkdir ~/backup | mv ~/.bash_profile ~/.vim ~/.vimrc ~/.screenrc backup`
 2. get this repository from github 
     * `mkdir ~/.dotfiles | cd ~/.dotfiles | git clone git@github.com:nudelfabrik/.dotfiles.git`
+    * `git submodule init`
+    * `git submodule update`
 
 3. symlinks
     * `ln -s ~/.dotfiles/bash_profile ~/.bash_profile`
