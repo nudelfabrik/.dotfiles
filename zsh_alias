@@ -1,5 +1,6 @@
 #zsh specific
-
+alias -g pcode="enscript --header='%F| $n |Page $% of \$=' -C -Ejava -p - "
+alias -g printout="| pstopdf -i -o "
 #Directories
 
 #fuctions
