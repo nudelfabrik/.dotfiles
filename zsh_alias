@@ -21,7 +21,7 @@ alias cd..='cd ..'
 alias la='ls -a'
 alias vi='vim'
 alias rmr='rm -r'
-alias uni='cd ~/Documents/Uni/1.\ Semester'
+alias uni='cd ~/Documents/Uni/1-Semester'
 
 #dayone
 alias log="/Scripts/logtodayone.rb"
