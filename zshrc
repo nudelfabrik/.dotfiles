@@ -12,6 +12,11 @@ echo -e "Today is "; date
 # time that oh-my-zsh is loaded.
 ZSH_THEME="agnoster"
 DEFAULT_USER="Bene"
+
+if [ -n "$SSH_CLIENT" ]; then 
+  ZSH_THEME="af-magic"
+fi
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
