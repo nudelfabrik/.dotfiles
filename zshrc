@@ -14,7 +14,7 @@ ZSH_THEME="agnoster"
 DEFAULT_USER="Bene"
 
 if [ -n "$SSH_CLIENT" ]; then 
-  ZSH_THEME="af-magic"
+  ZSH_THEME="frisk"
 fi
 
 # Example aliases
