@@ -6,6 +6,7 @@ echo -e "Welcome in "; hostname
 echo -e ""
 echo -e "Today is "; date
 
+export TERM="xterm-256color"
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
