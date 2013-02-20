@@ -6,6 +6,7 @@ echo -e "Welcome in "; hostname
 echo -e ""
 echo -e "Today is "; date
 
+export TERM="xterm-256color"
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -20,7 +21,6 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source ~/.dotfiles/zsh_alias
 # Set to this to use case-sensitive completion
 #  CASE_SENSITIVE="true"
 
@@ -43,5 +43,6 @@ plugins=(git svn )
 
 source $ZSH/oh-my-zsh.sh
 
+source ~/.dotfiles/zsh_alias
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/games/bin:/opt/bin:/opt/local/bin:~/Library/Haskell/bin
+export PATH=/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/games/bin:/opt/local/bin:~/Library/Haskell/bin

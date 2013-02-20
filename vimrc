@@ -46,6 +46,13 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 imap <c-e> <c-o>$
 imap <c-a> <c-o>^
+
+cnoremap <C-a>  <Home>
+cnoremap <C-b>  <Left>
+cnoremap <C-f>  <Right>
+cnoremap <C-d>  <Delete>
+cnoremap <M-b>  <S-Left>
+cnoremap <M-f>  <S-Right>
 set backupdir=~/.vimtmp
 set directory=~/.vimtmp 
 " Show syntax highlighting groups for word under cursor
