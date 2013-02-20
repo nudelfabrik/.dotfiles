@@ -21,7 +21,6 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source ~/.dotfiles/zsh_alias
 # Set to this to use case-sensitive completion
 #  CASE_SENSITIVE="true"
 
@@ -44,5 +43,6 @@ plugins=(git svn )
 
 source $ZSH/oh-my-zsh.sh
 
+source ~/.dotfiles/zsh_alias
 # Customize to your needs...
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/games/bin/:/opt/bin/:/opt/local/bin:~/Library/Haskell/bin
