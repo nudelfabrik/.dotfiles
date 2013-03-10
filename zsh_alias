@@ -18,7 +18,7 @@ alias log="/Scripts/logtodayone.rb"
 alias dotfiles="cd ~/.dotfiles"
 
 alias mount_tatooine='mount_smbfs //TATOOINE/Users/Bene/Pictures/Pictures/MP\ Navigator\ EX /Users/Bene/Pictures/scanner/'
-alias neth='screen -t nethack /usr/games/bin/nethack'
+alias neth='tmux -L nethack -c /usr/games/bin/nethack'
 
 #minecraft
 alias mine_extract='cd ~/Desktop/ ; mkdir mctmp ; cd mctmp ; jar xf ~/Library/Application\ Support/minecraft/bin/minecraft.jar'
