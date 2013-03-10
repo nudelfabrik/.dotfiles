@@ -1,6 +1,7 @@
 #old bash
 #distribute current path via http port 1138
 alias serve='python -m SimpleHTTPServer 1138'
+alias sleepnow="osascript -e 'tell application \"System Events\" to sleep'"
 #common
 alias f='open -a Finder ./'
 alias instalist='python /usr/local/bin/readinglist2instapaper.py'
