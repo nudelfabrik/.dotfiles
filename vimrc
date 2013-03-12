@@ -37,7 +37,8 @@ set showmatch
 let mapleader="-"
 nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <leader><space> :noh<cr>
-
+nnoremap <leader>f :NERDTreeToggle<cr>
+nnoremap <leader>c :TagbarToggle<CR>
 "" remap
 inoremap jj <ESC>
 nnoremap <c-j> <c-w>j           " switch btw. windows
@@ -59,4 +60,5 @@ set directory=~/.vimtmp
 nmap <c-p> :echo synIDattr(synID(line("."), col("."), 1), "name") <CR>
 
 hi StatusLine ctermbg=green
+hi StatusLine ctermfg=black
 hi MatchParen ctermbg=green
