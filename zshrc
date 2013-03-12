@@ -4,7 +4,7 @@ ZSH=$HOME/.dotfiles/oh-my-zsh
 
 echo -e "Welcome in "; hostname
 echo -e ""
-echo -e "Today is "; date
+ddatefull
 
 export TERM="xterm-256color"
 # Set name of the theme to load.
