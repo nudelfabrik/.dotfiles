@@ -62,3 +62,4 @@ nmap <c-p> :echo synIDattr(synID(line("."), col("."), 1), "name") <CR>
 hi StatusLine ctermbg=green
 hi StatusLine ctermfg=black
 hi MatchParen ctermbg=green
+hi MatchParen ctermfg=black
