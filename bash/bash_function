@@ -47,7 +47,8 @@ function mount_DS () {
         mkdir ~/Stuff/mounts/$*
         mount_afp afp://Bene:$(getPW_DS)@DiskStation.local/$* ~/Stuff/mounts/$*
     else
-        mount_afp afp://Bene:$(getPW_DS)@DiskStation.local/home ~/Stuff/mounts/$*
+        mkdir ~/Stuff/mounts/home
+        mount_af afp://Bene:$(getPW_DS)@DiskStation.local/home ~/Stuff/mounts/home
     fi
 }
 
@@ -56,7 +57,7 @@ function umount_DS () {
         umount ~/Stuff/mounts/$*
         rmdir ~/Stuff/mounts/$*
     else
-        umount ~/Stuff/mounts/home
+        diskutil unmount -force ~/Stuff/mounts/home
         rmdir ~/Stuff/mounts/home
     fi
 }
