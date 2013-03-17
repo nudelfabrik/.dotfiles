@@ -13,12 +13,12 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "bundle/gutter"]
-	path = bundle/gutter
-	url = git://github.com/airblade/vim-gitgutter.git
 [submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = git://github.com/majutsushi/tagbar
+[submodule "vim/bundle/gutter"]
+	path = vim/bundle/gutter
+	url = git://github.com/airblade/vim-gitgutter.git
