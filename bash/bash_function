@@ -43,7 +43,24 @@ function console () {
   fi
 }
 
+function mount_DS () {
+    if [[ $# > 0 ]]; then
+        mkdir ~/Stuff/mounts/$*
+        mount_afp afp://Bene:$(getPW_DS)@DiskStation.local/$* ~/Stuff/mounts/$*
+    else
+        mount_afp afp://Bene:$(getPW_DS)@DiskStation.local/home ~/Stuff/mounts/$*
+    fi
+}
 
+function umount_DS () {
+    if [[ $# > 0 ]]; then
+        umount ~/Stuff/mounts/$*
+        rmdir ~/Stuff/mounts/$*
+    else
+        umount ~/Stuff/mounts/home
+        rmdir ~/Stuff/mounts/home
+    fi
+}
 # http://brettterpstra.com/bash-completion-for-defaults-domains/
 # Bash completion for `defaults` domains
 # e.g. `defaults read com.apple[TAB]`

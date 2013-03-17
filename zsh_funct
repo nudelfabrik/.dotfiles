@@ -2,6 +2,26 @@
 #Directories
 
 #fuctions
+function mount_DS () {
+    if [[ $# > 0 ]]; then
+        mkdir ~/Stuff/mounts/$*
+        mount_afp afp://Bene:$(getPW_DS)@DiskStation.local/$* ~/Stuff/mounts/$*
+    else
+        mount_afp afp://Bene:$(getPW_DS)@DiskStation.local/home ~/Stuff/mounts/$*
+    fi
+}
+
+function umount_DS () {
+    if [[ $# > 0 ]]; then
+        umount ~/Stuff/mounts/$*
+        rmdir ~/Stuff/mounts/$*
+    else
+        umount ~/Stuff/mounts/home
+        rmdir ~/Stuff/mounts/home
+    fi
+}
+
+
 function console () {
   if [[ $# > 0 ]]; then
     query=$(echo "$*"|tr -s ' ' '|')
