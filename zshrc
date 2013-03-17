@@ -44,5 +44,6 @@ plugins=(git svn )
 source $ZSH/oh-my-zsh.sh
 
 source ~/.dotfiles/zsh_alias
+source ~/.dotfiles/zsh_funct
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/games/bin:/opt/local/bin:~/Library/Haskell/bin:/usr/local/sbin
