@@ -14,7 +14,7 @@ export TERM="xterm-256color"
 ZSH_THEME="agnoster"
 DEFAULT_USER="Bene"
 
-if [ -n "$SSH_CLIENT" ]; then 
+if [ -n "$SSH_CONNECTION" ]; then 
   ZSH_THEME="frisk"
 fi
 
