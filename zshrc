@@ -2,7 +2,7 @@
 ZSH=$HOME/.dotfiles/oh-my-zsh
 
 
-echo -e "Welcome in "; hostname
+echo -e "Welcome @ \c"; hostname -s
 echo -e ""
 ddatefull
 
