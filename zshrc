@@ -4,7 +4,7 @@ ZSH=$HOME/.dotfiles/oh-my-zsh
 
 echo -e "Welcome @ \c"; hostname -s
 echo -e ""
-ddatefull
+ddate
 
 export TERM="xterm-256color"
 # Set name of the theme to load.
