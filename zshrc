@@ -13,6 +13,7 @@ export TERM="xterm-256color"
 # time that oh-my-zsh is loaded.
 ZSH_THEME="agnoster"
 DEFAULT_USER="Bene"
+setopt CORRECT
 
 if [ -n "$SSH_CONNECTION" ]; then 
   ZSH_THEME="frisk"
