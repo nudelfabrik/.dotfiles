@@ -9,6 +9,7 @@ export TERM="xterm-256color"
 # Look in ~/.oh-my-zsh/themes/
 ZSH_THEME="agnoster"
 DEFAULT_USER="Bene"
+setopt CORRECT
 
 if [ -n "$SSH_CONNECTION" ]; then 
   ZSH_THEME="frisk"
