@@ -13,6 +13,7 @@ alias la='ls -a'
 alias vi='vim'
 alias rmr='rm -r'
 alias uni='cd ~/Documents/Uni/Semester-1'
+alias -g ulb='/usr/local/bin'
 
 #dayone
 alias log="/Scripts/logtodayone.rb"
