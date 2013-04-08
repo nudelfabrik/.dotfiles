@@ -1,5 +1,0 @@
-cd ~/.dotfiles
-new_session -n dotfiles
-send_keys 1 "gstat" "enter"
-new_window -n zshrc "vi ~/.dotfiles/zshrc"
-new_window -n zshalias "vi ~/.dotfiles/zsh_alias"
