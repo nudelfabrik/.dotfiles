@@ -20,6 +20,10 @@ source $ZSH/oh-my-zsh.sh
 source ~/.dotfiles/zsh_alias
 source ~/.dotfiles/zsh_funct
 
+#
+# teamocil autocomplete
+compctl -g '~/.teamocil/*(:t:r)' teamocil
+
 # Zsh Settings
 #
 # Customize to your needs...
