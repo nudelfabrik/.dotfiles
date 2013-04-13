@@ -5,10 +5,10 @@
 function mount_DS () {
     if [[ $# > 0 ]]; then
         mkdir ~/Stuff/mounts/$*
-        mount_afp afp://Bene:$(getPW_DS)@DiskStation.local/$* ~/Stuff/mounts/$*
+        mount_afp afp://Bene:$(/usr/local/bin/getPW_DS)@192.168.178.21/$* ~/Stuff/mounts/$*
     else
         mkdir ~/Stuff/mounts/home
-        mount_afp afp://Bene:$(getPW_DS)@DiskStation.local/home ~/Stuff/mounts/home
+        mount_afp afp://Bene:$(/usr/local/bin/getPW_DS)@192.168.178.21/home ~/Stuff/mounts/home
     fi
 }
 
