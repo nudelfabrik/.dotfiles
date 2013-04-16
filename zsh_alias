@@ -12,7 +12,7 @@ alias cd..='cd ..'
 alias la='ls -a'
 alias vi='vim'
 alias rmr='rm -r'
-alias uni='cd ~/Documents/Uni/Semester-1'
+alias uni='cd ~/Documents/Uni/Semester'
 alias -g ulb='/usr/local/bin'
 
 #dayone
