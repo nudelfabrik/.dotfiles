@@ -41,12 +41,16 @@ nnoremap <leader>f :NERDTreeToggle<cr>
 nnoremap <leader>c :TagbarToggle<CR>
 "" remap
 inoremap jj <ESC>
+imap <c-e> <c-o>$
+imap <c-a> <c-o>^
+
+"" Windows
 nnoremap <c-j> <c-w>j           " switch btw. windows
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
-imap <c-e> <c-o>$
-imap <c-a> <c-o>^
+set splitbelow
+set splitright
 
 cnoremap <C-a>  <Home>
 cnoremap <C-b>  <Left>
