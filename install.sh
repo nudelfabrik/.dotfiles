@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # backup
 mkdir ~/dotfiles_backup 
