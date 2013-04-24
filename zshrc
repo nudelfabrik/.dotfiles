@@ -11,7 +11,7 @@ ZSH_THEME="agnoster"
 DEFAULT_USER="Bene"
 setopt CORRECT
 
-if [[ uname -eq "FreeBSD"]]; then
+if [[ uname == "FreeBSD" ]]; then
   ZSH_THEME="candy"
 fi
 
