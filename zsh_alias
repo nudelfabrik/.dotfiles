@@ -17,7 +17,7 @@ alias -g ulb='/usr/local/bin'
 alias tree='tree -C'
 #dayone
 alias log="/Scripts/logtodayone.rb"
-
+alias marked="open -a Marked.app"
 #dotfiles 
 alias dotfiles="cd ~/.dotfiles"
 
