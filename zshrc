@@ -5,11 +5,15 @@ echo -e "Welcome @ \c"; hostname -s
 echo -e ""
 ddate
 
-export TERM="xterm-256color"
+#export TERM="xterm"
 # Look in ~/.oh-my-zsh/themes/
 ZSH_THEME="agnoster"
 DEFAULT_USER="Bene"
 setopt CORRECT
+
+if [[ $(uname) == "FreeBSD" ]]; then
+  ZSH_THEME="candy"
+fi
 
 if [ -n "$SSH_CONNECTION" ]; then 
   ZSH_THEME="frisk"
