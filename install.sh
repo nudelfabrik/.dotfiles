@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 
 # backup
 mkdir ~/dotfiles_backup 
-mv ~/.bash_profile ~/.vim ~/.vimrc ~/.gitconfig ~/.tmux.conf ~/.screenrc ~/dotfiles_backup ~/.teamocil
+mv ~/.bash_profile ~/.vim ~/.vimrc ~/.gitconfig ~/.tmux.conf ~/.screenrc ~/.teamocil ~/dotfiles_backup
 # make symlinks
 ln -s ~/.dotfiles/bash_profile ~/.bash_profile
 ln -s ~/.dotfiles/vim ~/.vim
