@@ -39,6 +39,9 @@ nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>f :NERDTreeToggle<cr>
 nnoremap <leader>c :TagbarToggle<CR>
+nnoremap <leader>1 yypVr=
+nnoremap <leader>2 yypVr-
+
 "" remap
 inoremap jj <ESC>
 imap <c-e> <c-o>$
