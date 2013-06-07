@@ -13,3 +13,5 @@ ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/zshrc ~/.zshrc
 ln -s ~/.dotfiles/teamocil ~/.teamocil
 mkdir ~/.vimtmp
+git submodule init
+git submodule update
