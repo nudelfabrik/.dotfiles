@@ -15,3 +15,7 @@ ln -s ~/.dotfiles/teamocil ~/.teamocil
 mkdir ~/.vimtmp
 git submodule init
 git submodule update
+# sometimes submodule do not pull corretly, use
+# git submodule foreach git pull
+# additional attention to oh-my-zsh:
+# might have to do git pull remote (or similar)
