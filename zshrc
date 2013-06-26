@@ -4,6 +4,7 @@ ZSH=$HOME/.dotfiles/oh-my-zsh
 echo -e "Welcome @ \c"; hostname -s
 echo -e ""
 ddate
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/games/bin:/opt/local/bin:~/Library/Haskell/bin:/usr/local/sbin
 
 #export TERM="xterm"
 # Look in ~/.oh-my-zsh/themes/
@@ -19,7 +20,6 @@ if [ -n "$SSH_CONNECTION" ]; then
   ZSH_THEME="frisk"
 fi
 
-source $ZSH/oh-my-zsh.sh
 
 source ~/.dotfiles/zsh_alias
 source ~/.dotfiles/zsh_funct
@@ -31,7 +31,6 @@ compctl -g '~/.teamocil/*(:t:r)' teamocil
 # Zsh Settings
 #
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/games/bin:/opt/local/bin:~/Library/Haskell/bin:/usr/local/sbin
 
 # Set to this to use case-sensitive completion
 #  CASE_SENSITIVE="true"
@@ -52,3 +51,4 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git svn brew forklift osx tmux )
+source $ZSH/oh-my-zsh.sh
