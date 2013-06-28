@@ -20,10 +20,6 @@ if [ -n "$SSH_CONNECTION" ]; then
   ZSH_THEME="frisk"
 fi
 
-
-source ~/.dotfiles/zsh_alias
-source ~/.dotfiles/zsh_funct
-
 #
 # teamocil autocomplete
 compctl -g '~/.teamocil/*(:t:r)' teamocil
@@ -32,6 +28,8 @@ compctl -g '~/.teamocil/*(:t:r)' teamocil
 #
 # Customize to your needs...
 
+# Autostart tmux
+ZSH_TMUX_AUTOSTART="true"
 # Set to this to use case-sensitive completion
 #  CASE_SENSITIVE="true"
 
@@ -52,3 +50,6 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git svn brew forklift osx tmux )
 source $ZSH/oh-my-zsh.sh
+
+source ~/.dotfiles/zsh_alias
+source ~/.dotfiles/zsh_funct
