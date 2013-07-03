@@ -11,13 +11,17 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr
 ZSH_THEME="agnoster"
 DEFAULT_USER="Bene"
 setopt CORRECT
+# Autostart tmux
+ZSH_TMUX_AUTOSTART="true"
 
 if [[ $(uname) == "FreeBSD" ]]; then
-  ZSH_THEME="candy"
+    ZSH_THEME="candy"
+    ZSH_TMUX_AUTOSTART="false"
 fi
 
 if [ -n "$SSH_CONNECTION" ]; then 
-  ZSH_THEME="frisk"
+    ZSH_THEME="frisk"
+    ZSH_TMUX_AUTOSTART="false"
 fi
 
 #
@@ -28,8 +32,6 @@ compctl -g '~/.teamocil/*(:t:r)' teamocil
 #
 # Customize to your needs...
 
-# Autostart tmux
-ZSH_TMUX_AUTOSTART="true"
 # Set to this to use case-sensitive completion
 #  CASE_SENSITIVE="true"
 
