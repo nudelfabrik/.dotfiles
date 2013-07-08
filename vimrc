@@ -72,3 +72,4 @@ hi MatchParen ctermbg=green
 hi MatchParen ctermfg=black
 
 let g:airline_powerline_fonts=1
+let g:clang_user_options='|| exit 0'
