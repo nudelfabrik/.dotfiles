@@ -70,3 +70,5 @@ hi StatusLine ctermbg=green
 hi StatusLine ctermfg=black
 hi MatchParen ctermbg=green
 hi MatchParen ctermfg=black
+
+let g:airline_powerline_fonts=1
