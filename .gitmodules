@@ -28,3 +28,6 @@
 [submodule "vim/bundle/unite.vim"]
 	path = vim/bundle/unite.vim
 	url = git@github.com:Shougo/unite.vim.git
+[submodule "vim/bundle/airline"]
+	path = vim/bundle/airline
+	url = git@github.com:bling/vim-airline.git
