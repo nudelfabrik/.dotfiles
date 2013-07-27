@@ -1,0 +1,44 @@
+[subtree "oh-my-zsh"]
+	url = git@github.com:robbyrussell/oh-my-zsh.git
+	path = oh-my-zsh
+	branch = master
+[subtree "vim/bundle/numbers"]
+    url = git@github.com:myusuf3/numbers.vim.git
+    path = vim/bundle/numbers
+    branch = master
+[subtree "vim/bundle/vim-surround"]
+    url = git@github.com:tpope/vim-surround.git
+    path = vim/bundle/surround
+    branch = master
+[subtree "vim/bundle/nerdtree"]
+    url = git@github.com:scrooloose/nerdtree.git
+    path = vim/bundle/nerdtree
+    branch = master
+[subtree "vim/bundle/fugitive"]
+    url = git@github.com:tpope/vim-fugitive.git
+    path = vim/bundle/fugitive
+    branch = master
+[subtree "vim/bundle/tagbar"]
+    url = git@github.com:majutsushi/tagbar
+    path = vim/bundle/tagbar
+    branch = master
+[subtree "vim/bundle/gitgutter"]
+    url = git@github.com:airblade/vim-gitgutter.git
+    path = vim/bundle/gitgutter
+    branch = master
+[subtree "vim/bundle/snipmate"]
+    url = git@github.com:msanders/snipmate.vim.git
+    path = vim/bundle/snipmate
+    branch = master
+[subtree "vim/bundle/unite"]
+    url = git@github.com:Shougo/unite.vim.git
+    path = vim/bundle/unite
+    branch = master
+[subtree "vim/bundle/airline"]
+    url = git@github.com:bling/vim-airline.git
+    path = vim/bundle/airline
+    branch = master
+[subtree "vim/bundle/surround"]
+	url = git@github.com:tpope/vim-surround.git
+	path = vim/bundle/surround
+	branch = master
