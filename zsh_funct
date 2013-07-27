@@ -1,4 +1,12 @@
 #zsh Functions
+#git subtree 
+function git-subtree-pullall () {
+    git subtree list | awk '{print $1}'|while read line
+    do
+        git subtree pull --prefix=$line --squash
+    done
+}
+
 #Directories
 
 #fuctions
