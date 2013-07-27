@@ -28,7 +28,7 @@ another statusline?
 ==============================================================================
 NAME                                                          *airline-name*
 
-Why is it named airline?
+Where did the name come from?
 
 I wrote this on an airplane, and since it's light as air it turned out to be a
 good name :-)
@@ -58,6 +58,19 @@ values):
 >
   let g:airline_enable_syntastic=1
 <
+
+* enable modified detection
+>
+  let g:airline_detect_modified=1
+<
+
+* enable paste detection
+>
+  let g:airline_detect_paste=1
+<
+* enable iminsert detection
+>
+  let g:airline_detect_iminsert=1
 
 * change the default theme
 >
@@ -160,7 +173,6 @@ with the usual statusline syntax.
 If there is a particular plugin or filetype that is not supported, you can
 extend it by adding a function reference to the global array.  Here is an
 example that you could add to your vimrc:
-
 >
   function! MyPlugin()
     if &filetype == 'MyPluginFileType'
@@ -171,6 +183,23 @@ example that you could add to your vimrc:
   endfunction
   call add(g:airline_window_override_funcrefs, function('MyPlugin'))
 <
+
+In a similar fashion, you can define a function to exclude a window from
+having its statusline modified.
+>
+  function! ExcludeFoo()
+    return &filetype == 'FooType'
+  endfunction
+  call add(g:airline_exclude_funcrefs, function('ExcludeFoo'))
+<
+
+==============================================================================
+WRITING THEMES                                              *airline-themes*
+
+Themes are written "close to the metal" -- you will need to know some basic
+VimL syntax to write a theme, but if you're written in any programming
+language it will be easy to pick up.  Have a look at the dark.vim theme
+where it is fully documented.
 
 ==============================================================================
 TROUBLESHOOTING                                    *airline-troubleshooting*
