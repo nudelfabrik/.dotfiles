@@ -15,6 +15,9 @@ call s:check_defined('g:airline_right_alt_sep', exists('g:airline_powerline_font
 call s:check_defined('g:airline_enable_bufferline', 1)
 call s:check_defined('g:airline_enable_fugitive', 1)
 call s:check_defined('g:airline_enable_syntastic', 1)
+call s:check_defined('g:airline_detect_iminsert', 0)
+call s:check_defined('g:airline_detect_modified', 1)
+call s:check_defined('g:airline_detect_paste', 1)
 call s:check_defined('g:airline_fugitive_prefix', exists('g:airline_powerline_fonts')?' ':'')
 call s:check_defined('g:airline_readonly_symbol', exists('g:airline_powerline_fonts')?'':'RO')
 call s:check_defined('g:airline_linecolumn_prefix', exists('g:airline_powerline_fonts')?' ':':')
@@ -24,15 +27,16 @@ call s:check_defined('g:airline_exclude_filenames', ['DebuggerWatch','DebuggerSt
 call s:check_defined('g:airline_exclude_filetypes', [])
 call s:check_defined('g:airline_exclude_preview', 0)
 call s:check_defined('g:airline_window_override_funcrefs', [])
+call s:check_defined('g:airline_exclude_funcrefs', [])
 
 call s:check_defined('g:airline_mode_map', {
       \ 'n'  : 'NORMAL',
       \ 'i'  : 'INSERT',
-      \ 'R'  : 'RPLACE',
+      \ 'R'  : 'REPLACE',
       \ 'v'  : 'VISUAL',
       \ 'V'  : 'V-LINE',
       \ 'c'  : 'CMD   ',
-      \ '' : 'V-BLCK',
+      \ '' : 'V-BLOCK',
       \ })
 
 let s:airline_initialized = 0
@@ -41,7 +45,7 @@ function! s:init()
     call airline#extensions#load()
     call airline#update_externals()
     call airline#load_theme(g:airline_theme)
-    call s:check_defined('g:airline_section_a', '%{g:airline_current_mode_text} %{&paste ? g:airline_paste_symbol." " : ""}')
+    call s:check_defined('g:airline_section_a', '%{g:airline_current_mode_text}')
     call s:check_defined('g:airline_section_b', '%{g:airline_externals_fugitive}')
     call s:check_defined('g:airline_section_c', g:airline_externals_bufferline)
     call s:check_defined('g:airline_section_gutter', '')
@@ -69,5 +73,6 @@ augroup airline
   au!
   autocmd ColorScheme * call airline#highlight(['normal'])
   autocmd WinLeave * call airline#update_statusline(0)
-  autocmd WinEnter,BufWinEnter,FileType * call <sid>init() | call airline#update_statusline(1)
+  autocmd WinEnter,BufWinEnter,FileType,BufUnload * call <sid>init() | call airline#update_statusline(1)
+  autocmd ShellCmdPost * call airline#update_externals()
 augroup END
