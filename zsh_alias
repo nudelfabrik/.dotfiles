@@ -15,6 +15,7 @@ alias tree='tree -C -L 2'
 #distribute current path via http port 1138
 alias serve='python -m SimpleHTTPServer 1138'
 
+alias wakeup="wakeonlan 94:de:80:9a:18:51"
 alias sleepnow="osascript -e 'tell application \"System Events\" to sleep'"
 
 #terpstra
