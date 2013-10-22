@@ -17,6 +17,8 @@ set cursorline
 set ttyfast
 set backspace=indent,eol,start
 
+set number
+
 
 "" Whitespace
 set nowrap                      " don't wrap lines
