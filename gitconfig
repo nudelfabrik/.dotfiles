@@ -32,3 +32,5 @@
 	ui = true
 [push]
 	default = current
+[merge]
+	tool = opendiff
