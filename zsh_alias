@@ -25,7 +25,6 @@ alias marked="open -a Marked.app"
 #dotfiles 
 alias dotfiles="cd ~/.dotfiles"
 
-alias mount_tatooine='mount_smbfs //TATOOINE/Users/Bene/Pictures/Pictures/MP\ Navigator\ EX /Users/Bene/Pictures/scanner/'
 alias neth='tmux -L nethack -c /usr/games/bin/nethack'
 
 #minecraft
