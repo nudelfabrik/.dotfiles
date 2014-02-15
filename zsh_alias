@@ -44,3 +44,5 @@ alias glg="git log --graph --pretty=format:'%Cred%h%Creset - %Cgreen%an%Creset -
 #alias glg='git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --'
 alias gp='git push'
 alias gpush='git push'
+
+    alias pfreload='sudo pfctl -f /etc/pf.conf'
