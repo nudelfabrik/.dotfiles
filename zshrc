@@ -4,7 +4,7 @@ ZSH=$HOME/.dotfiles/oh-my-zsh
 echo -e "Welcome @ \c"; hostname -s
 echo -e ""
 ddate
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/games/bin:/opt/local/bin:~/Library/Haskell/bin:/usr/local/sbin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/games/bin:/opt/local/bin:/usr/local/sbin
 
 #export TERM="xterm"
 # Look in ~/.oh-my-zsh/themes/
