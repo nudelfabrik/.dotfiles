@@ -10,7 +10,6 @@ ln -s ~/.dotfiles/vimrc ~/.vimrc
 ln -s ~/.dotfiles/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/zshrc ~/.zshrc
-ln -s ~/.dotfiles/teamocil ~/.teamocil
 ln -s ~/.dotfiles/todo ~/.todo
 mkdir ~/.vimtmp
 git submodule init
