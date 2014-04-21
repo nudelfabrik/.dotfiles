@@ -1,6 +1,0 @@
-windows:
-  - name: "Alderaan"
-    clear: true
-    root: "~"
-    panes:
-      - cmd: "ssh Alderaan"      

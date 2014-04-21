@@ -1,6 +1,0 @@
-windows:
-  - name: "Coruscant"
-    clear: true
-    root: "~"
-    panes:
-      - cmd: "ssh Coruscant"      
