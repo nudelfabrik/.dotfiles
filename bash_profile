@@ -12,7 +12,21 @@ echo -e "Welcome on "; hostname
 echo -e ""
 echo -e "Today is "; date
 
-#source
-source ~/.dotfiles/bash/git-completion.bash
-source ~/.dotfiles/bash/bash_alias
-source  ~/.dotfiles/bash/bash_function
+
+#common
+alias home='cd ~'
+alias lsa='ls -a'
+alias ..='cd ..'
+alias cd..='cd ..'
+alias la='ls -a'
+alias vi='vim'
+
+#git
+alias gst='git stat'
+alias gstat='git stat'
+alias gitstat='git stat'
+alias gadd='git add .'
+alias gcmt='git commit'
+alias gp='git push'
+alias gpush='git push'
+
