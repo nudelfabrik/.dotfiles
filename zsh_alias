@@ -34,7 +34,7 @@ if [[ $(uname) == "Darwin" ]]; then
     alias uni='cd ~/Documents/Uni/Semester'
     alias wakeup="wakeonlan 94:de:80:9a:18:51"
     alias sleepnow="osascript -e 'tell application \"System Events\" to sleep'"
-    alias t='clear; todo.sh'
+    alias t='todo.sh'
 
     #minecraft
     alias mine_extract='cd ~/Desktop/ ; mkdir mctmp ; cd mctmp ; jar xf ~/Library/Application\ Support/minecraft/bin/minecraft.jar'
