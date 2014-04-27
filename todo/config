@@ -26,7 +26,7 @@ export WHITE='\\033[1;37m'
 export DEFAULT='\\033[0m'
 
 export COLOR_PROJECT=$LIGHT_BLUE
-export COLOR_CONTEXT=$DARK_GREY
+export COLOR_CONTEXT=$LIGHT_GREEN
 
 export PRI_A=$RED        # color for A priority
 export PRI_B=$YELLOW         # color for B priority
