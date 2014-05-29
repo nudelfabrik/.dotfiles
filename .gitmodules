@@ -34,3 +34,6 @@
 [submodule "vim/bundle/YouCompleteMe"]
 	path = vim/bundle/YouCompleteMe
 	url = git@github.com:Valloric/YouCompleteMe.git
+[submodule "vim/bundle/airline"]
+	path = vim/bundle/airline
+	url = git@github.com:nudelfabrik/vim-airline.git
