@@ -2,8 +2,6 @@
 alias home='cd ~'
 alias lsa='ls -a'
 alias ös='ls'
-alias ..='cd ..'
-alias cd..='cd ..'
 alias la='ls -a'
 alias vi='vim'
 alias rmr='rm -r'
