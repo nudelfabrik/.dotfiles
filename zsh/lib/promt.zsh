@@ -14,7 +14,12 @@ promptinit
 # A few utility functions to make it easy and re-usable to draw segmented prompts
 
 CURRENT_BG='NONE'
-SEGMENT_SEPARATOR=''
+if [[ $TERM == "screen-256color" ]]
+then
+    SEGMENT_SEPARATOR=''
+else
+    SEGMENT_SEPARATOR='>'
+fi
 
 # Begin a segment
 # Takes two arguments, background and foreground. Both can be omitted,
