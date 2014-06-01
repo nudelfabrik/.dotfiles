@@ -14,7 +14,7 @@ promptinit
 # A few utility functions to make it easy and re-usable to draw segmented prompts
 
 CURRENT_BG='NONE'
-if [[ $TERM == "screen-256color" ]]
+if [[ $TERM == "screen-256color" ]] || [[ $TERM == "xterm-256color" ]]
 then
     SEGMENT_SEPARATOR=''
 else
