@@ -8,6 +8,7 @@ alias vi='vim'
 alias rmr='rm -r'
 alias -g ulb='/usr/local/bin'
 alias tree='tree -C -L 2'
+alias sudo='sudo '
 
 #distribute current path via http port 1138
 alias serve='python -m SimpleHTTPServer 1138'
