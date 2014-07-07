@@ -7,8 +7,6 @@ filetype plugin indent on
 colorscheme smyck
 set background=dark
 
-au BufNewFile,BufRead *.fish set filetype=conf
-
 set autoread
 set wildmenu
 set wildmode=list:longest
