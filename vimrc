@@ -55,6 +55,7 @@ nnoremap <c-l> <c-w>l
 set splitbelow
 set splitright
 
+cnoremap w! w !sudo tee %
 cnoremap <C-a>  <Home>
 cnoremap <C-b>  <Left>
 cnoremap <C-f>  <Right>
