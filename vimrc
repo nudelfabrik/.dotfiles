@@ -78,6 +78,8 @@ let g:gitgutter_realtime = 0
 let g:airline_powerline_fonts=1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#hunks#non_zero_only = 1
+let g:airline_section_y = '%{airline#util#wrap(airline#parts#filetype(),0)}'
+let g:airline_section_x = '%{airline#extensions#tagbar#currenttag()}'
 let g:clang_user_options='|| exit 0'
 
 " YCM
