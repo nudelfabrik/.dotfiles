@@ -79,3 +79,7 @@ let g:airline_powerline_fonts=1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#hunks#non_zero_only = 1
 let g:clang_user_options='|| exit 0'
+
+" YCM
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
