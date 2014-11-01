@@ -1,6 +1,7 @@
 .DS_Store
 .swp
 vim/.netrwhist
+vim/.ycm_extra_conf.pyc
 fish/fish_history
 vim/bundle/snipmate/doc/tags
 
