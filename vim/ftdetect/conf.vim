@@ -1,2 +1,2 @@
 " Markdown
-autocmd BufNewFile,BufRead *.{conf*} set filetype=conf
+autocmd BufNewFile,BufRead {!pf}.{conf*} set filetype=conf
