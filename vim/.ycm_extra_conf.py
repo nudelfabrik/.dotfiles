@@ -7,34 +7,22 @@ from clang_helpers import PrepareClangFlags
 # more details: http://clang.llvm.org/docs/JSONCompilationDatabase.html
 # Most projects will NOT need to set this to anything; you can just change the
 # 'flags' list of compilation flags. Notice that YCM itself uses that approach.
-compilation_database_folder = '/Users/bene/Documents/MarbleRG/build/'
 compilation_database_folder = ''
 
 # These are the compilation flags that will be used in case there's no
 # compilation database set.
 flags = [
     '-Wall',
-    '-std=c++11',
-    '-stdlib=libc++',
+    '-std=c11',
+    '-stdlib=libc',
     '-x',
-    'c++',
+    'c',
     '-I',
     '.',
-    #'-DACGL_ERROR_LEVEL_EC3',
-    #'-DACGL_OPENGL_PROFILE_CORE',
-    #'-DACGL_OPENGL_VERSION_32',
-    #'-DNO_SPACE_NAVIGATOR_SUPPORT',
-    '-std=c++11',
-    '-isysroot',
-    '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk',
-    #'-isysroot',
-    #'-isystem',
-    #'-I/Users/bene/Documents/MarbleRG/extern/acgl/include',
-    #'-isysroot',
-    #'-isystem',
-    #'-I/Users/bene/Documents/MarbleRG/extern/glfw/include',
-    '-isystem',
-    '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1',
+    '-I',
+    '/usr/local/include',
+    '-L',
+    '/usr/local/lib',
     '-isystem',
     '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include',
     '-isystem',
@@ -43,9 +31,6 @@ flags = [
     '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include',
     '-isystem',
     '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks',
-    '-Wall',
-    '-isystem',
-    '/usr/lib/c++/v1'
 ]
 
 if compilation_database_folder:
