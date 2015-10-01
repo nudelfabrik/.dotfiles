@@ -69,8 +69,8 @@ promt_git() {
         zstyle ':vcs_info:*' check-for-changes true
         zstyle ':vcs_info:*' unstagedstr '●'   # display this when there are unstaged changes
         zstyle ':vcs_info:*' stagedstr '+'  # display this when there are staged changes
-        zstyle ':vcs_info:*' actionformats '⭠ %b %c%u <%a>'
-        zstyle ':vcs_info:*' formats '⭠ %b %c%u'
+        zstyle ':vcs_info:*' actionformats '%b %c%u <%a>'
+        zstyle ':vcs_info:*' formats '%b %c%u'
 
         vcs_info
 
