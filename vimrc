@@ -53,13 +53,24 @@ set gdefault                    " regex /g at end
 set showmatch
 
 "" Mapleader
-let mapleader="-"
+let mapleader = "\<Space>"
 nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>f :NERDTreeToggle<cr>
 nnoremap <leader>c :TagbarToggle<CR>
 nnoremap <leader>1 yypVr=
 nnoremap <leader>2 yypVr-
+
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
+vmap <Leader>v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+:set iskeyword-=_
 
 "" remap
 inoremap jj <ESC>
