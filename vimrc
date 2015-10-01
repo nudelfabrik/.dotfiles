@@ -1,6 +1,25 @@
-call pathogen#infect()
-call pathogen#helptags()
 set nocompatible
+filetype off  
+"" Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'myusuf3/numbers.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
+Plugin 'majutsushi/tagbar'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'Shougo/unite.vim'
+Plugin 'nudelfabrik/vim-airline'
+Plugin 'rizzatti/dash.vim'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'Valloric/YouCompleteMe'
+
+call vundle#end() 
+"" vundle
+
 set encoding=utf-8
 syntax enable
 filetype plugin indent on
