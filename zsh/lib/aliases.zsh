@@ -31,22 +31,7 @@ alias gpush='git push'
 # Mac specifics
 if [[ $(uname) == "Darwin" ]]; then
     alias f='open -a Finder ./'
-    alias uni='cd ~/Documents/Uni/Semester'
-    alias wakeup="wakeonlan 94:de:80:9a:18:51"
-    alias sleepnow="osascript -e 'tell application \"System Events\" to sleep'"
-    alias t='todo.sh'
-    alias gotot='cd /Users/Bene/Dropbox/Sync/Todo'
-
-    #minecraft
-    alias mine_extract='cd ~/Desktop/ ; mkdir mctmp ; cd mctmp ; jar xf ~/Library/Application\ Support/minecraft/bin/minecraft.jar'
-    alias mine_contract='cd ~/Desktop/mctmp ; jar uf ~/Library/Application\ Support/minecraft/bin/minecraft.jar ./ ; cd .. ; rm -rf mctmp ; cd ..'
-    alias mine='cd ~/Library/Application\ Support/minecraft/'
-
     alias neth='tmux -L nethack -c /usr/games/bin/nethack'
-    
-    #terpstra
-    alias log="/Scripts/logtodayone.rb"
-    alias marked="open -a Marked.app"
 fi
 
 # FreeBSD specifics

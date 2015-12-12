@@ -29,6 +29,5 @@ alias gadd='git add .'
 alias gcmt='git commit'
 alias gp='git push'
 alias gpush='git push'
-alias wakeup="wakeonlan 94:de:80:9a:18:51"
 
 export PATH=/usr/local/bin:$PATH
