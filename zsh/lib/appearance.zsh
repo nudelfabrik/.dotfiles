@@ -10,6 +10,10 @@ then
   ls --color -d . &>/dev/null 2>&1 && alias ls='ls --color=tty' || alias ls='ls -G'
 fi
 
+if [[ $(uname) == "Darwin" ]] || [[ -z "$SSH_CLIENT" ]] ; then
+    export POWERLINE=true
+fi
+
 #setopt no_beep
 setopt auto_cd
 setopt multios

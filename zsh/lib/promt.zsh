@@ -14,11 +14,23 @@ promptinit
 # A few utility functions to make it easy and re-usable to draw segmented prompts
 
 CURRENT_BG='NONE'
-if [[ $TERM == "screen-256color" ]] || [[ $TERM == "xterm-256color" ]]
+if [[ $POWERLINE == "true" ]]
 then
     SEGMENT_SEPARATOR=''
+    GIT_UNSTAGED="●"
+    GIT_STAGED="+"
+    GIT_BRANCH=""
+    ROOT_ICON="⚡"
+    JOBS_ICON="⚙"
+    ERROR_ICON="✘"
 else
     SEGMENT_SEPARATOR='>'
+    GIT_UNSTAGED='o'
+    GIT_STAGED='+'
+    GIT_BRANCH='b'
+    ROOT_ICON='#'
+    JOBS_ICON='J'
+    ERROR_ICON='X'
 fi
 
 # Begin a segment
@@ -67,10 +79,10 @@ promt_git() {
         # Look at http://zsh.sourceforge.net/Doc/Release/User-Contributions.html#Version-Control-Information
         # for mor options
         zstyle ':vcs_info:*' check-for-changes true
-        zstyle ':vcs_info:*' unstagedstr '●'   # display this when there are unstaged changes
-        zstyle ':vcs_info:*' stagedstr '+'  # display this when there are staged changes
-        zstyle ':vcs_info:*' actionformats ' %b %c%u <%a>'
-        zstyle ':vcs_info:*' formats ' %b %c%u'
+        zstyle ':vcs_info:*' unstagedstr "$GIT_UNSTAGED"   # display this when there are unstaged changes
+        zstyle ':vcs_info:*' stagedstr "$GIT_STAGED"  # display this when there are staged changes
+        zstyle ':vcs_info:*' actionformats "$GIT_BRANCH %b %c%u <%a>"
+        zstyle ':vcs_info:*' formats "$GIT_BRANCH %b %c%u"
 
         vcs_info
 
@@ -100,9 +112,9 @@ prompt_dir() {
 prompt_status() {
   local symbols
   symbols=()
-  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘"
-  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
-  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
+  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}$ERROR_ICON"
+  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}$ROOT_ICON"
+  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}$JOBS_ICON"
 
   [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
 }
