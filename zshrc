@@ -12,4 +12,7 @@ for config_file ($ZSH/lib/*.zsh) source $config_file
 autoload -U compinit
 compinit -i
 
+# Custom autocorrects
+compdef ping6=ping
+
 setopt CORRECT
