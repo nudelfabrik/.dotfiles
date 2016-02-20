@@ -8,8 +8,6 @@ setopt always_to_end
 
 WORDCHARS=''
 
-# Custom autocorrects
-compdef ping6=ping
 
 zmodload -i zsh/complist
 
