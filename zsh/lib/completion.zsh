@@ -8,6 +8,9 @@ setopt always_to_end
 
 WORDCHARS=''
 
+# Custom autocorrects
+compdef ping6=ping
+
 zmodload -i zsh/complist
 
 ## case-insensitive (all),partial-word and then substring completion
