@@ -1,41 +1,30 @@
 "" Vundle
-"Plugin 'VundleVim/Vundle.vim'
-"Plugin 'tpope/vim-surround'
-"Plugin 'scrooloose/nerdtree'
-"Plugin 'tpope/vim-fugitive'
-"Plugin 'majutsushi/tagbar'
-"Plugin 'airblade/vim-gitgutter'
 "Plugin 'Shougo/unite.vim'
-"Plugin 'nudelfabrik/vim-airline'
 "Plugin 'rizzatti/dash.vim'
 "Plugin 'christoomey/vim-tmux-navigator'
 "Plugin 'Valloric/YouCompleteMe'
-"
+
 call plug#begin('~/.config/.nvim/plugged')
+Plug 'myusuf3/numbers.vim'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
 Plug 'airblade/vim-gitgutter'
 Plug 'nudelfabrik/vim-airline'
-
+Plug 'Shougo/deoplete.nvim'
+Plug 'benekastah/neomake'
 call plug#end()
-set encoding=utf-8
-syntax enable
+
 filetype plugin indent on
 colorscheme smyck
 set background=dark
 
-set autoread
-set wildmenu
-set wildmode=list:longest
+"set wildmode=list:longest
+set wildmode=longest:full,full
 set visualbell
 set cursorline
-set ttyfast
-set backspace=indent,eol,start
-
 set number
-
 
 "" Whitespace
 set nowrap                      " don't wrap lines
@@ -45,8 +34,6 @@ set softtabstop=4
 set expandtab
 
 "" Searching
-set hlsearch                    " highlight matches
-set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 set gdefault                    " regex /g at end
@@ -58,6 +45,7 @@ nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>f :NERDTreeToggle<cr>
 nnoremap <leader>c :TagbarToggle<CR>
+nnoremap <leader>t :terminal<CR>
 
 "" Markdown Headlines
 nnoremap <leader>1 yypVr=
@@ -82,12 +70,21 @@ imap <c-e> <c-o>$
 imap <c-a> <c-o>^
 
 "" Windows
-nnoremap <c-j> <c-w>j           " switch btw. windows
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
+nnoremap <C-j> <c-w>j           " switch btw. windows
+nnoremap <C-k> <c-w>k
+nnoremap <C-h> <c-w>h
+nnoremap <C-l> <c-w>l
 set splitbelow
 set splitright
+
+" Terminal
+autocmd BufWinEnter,WinEnter term://* startinsert
+tnoremap <C-h> <C-\><C-n><C-w>h
+tnoremap <C-j> <C-\><C-n><C-w>j
+tnoremap <C-k> <C-\><C-n><C-w>k
+tnoremap <C-l> <C-\><C-n><C-w>l
+tnoremap <Esc> <C-\><C-n>
+tnoremap jj  <C-\><C-n>
 
 cnoremap w! w !sudo tee %
 cnoremap <C-a>  <Home>
@@ -107,7 +104,6 @@ hi MatchParen ctermbg=green
 hi MatchParen ctermfg=black
 
 set noshowmode
-set laststatus=2
 let g:gitgutter_realtime = 0
 let g:airline_powerline_fonts=1
 let g:airline#extensions#whitespace#enabled = 0
