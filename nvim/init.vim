@@ -14,6 +14,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'nudelfabrik/vim-airline'
 Plug 'Shougo/deoplete.nvim'
 Plug 'benekastah/neomake'
+Plug 'Rip-Rip/clang_complete'
 call plug#end()
 
 filetype plugin indent on
@@ -125,4 +126,11 @@ function! s:my_cr_function()
     return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
 endfunction
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+let g:clang_complete_auto = 0
+let g:clang_auto_select = 0
+let g:clang_omnicppcomplete_compliance = 0
+let g:clang_make_default_keymappings = 0
+set completeopt-=preview
+"let g:clang_use_library = 1
 
