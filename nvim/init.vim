@@ -119,3 +119,10 @@ let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_extra_conf_globlist =  ['~/Documents/Dev/*', '~/Dev/*', '~/Developer/*']
 let g:ycm_server_use_vim_stdout = 1
 let g:ycm_server_log_level = 'debug'
+
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+    return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+endfunction
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
