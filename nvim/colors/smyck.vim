@@ -24,7 +24,7 @@ hi Search               cterm=none ctermbg=6        ctermfg=15      gui=none    
 hi IncSearch            cterm=none ctermbg=3        ctermfg=8       gui=none        guibg=#F6DC69   guifg=#8F8F8F
 hi ColumnMargin         cterm=none ctermbg=0                        gui=none        guibg=#000000
 hi Error                cterm=none ctermbg=1        ctermfg=15      gui=none                        guifg=#F7F7F7
-hi ErrorMsg             cterm=none ctermbg=1        ctermfg=15      gui=none                        guifg=#F7F7F7
+hi ErrorMsg             cterm=none ctermbg=none     ctermfg=1       gui=none                        guifg=#F7F7F7
 hi Folded               cterm=none ctermbg=8        ctermfg=2       gui=none        guibg=#8F8F8F   guifg=#C4E858
 hi FoldColumn           cterm=none ctermbg=8        ctermfg=2       gui=none        guibg=#8F8F8F   guifg=#C4E858
 hi NonText              cterm=bold ctermbg=none     ctermfg=8       gui=bold                        guifg=#8F8F8F
@@ -69,28 +69,3 @@ hi Underlined           cterm=none ctermbg=none ctermfg=magenta     gui=underlin
 hi Symbol               cterm=none ctermbg=none ctermfg=9           gui=none        guifg=#FAB1AB
 hi Method               cterm=none ctermbg=none ctermfg=15          gui=none        guifg=#F7F7F7
 hi Interpolation        cterm=none ctermbg=none ctermfg=6           gui=none        guifg=#2EB5C1
-
-" Erlang
-hi link erlangAtom            Keyword
-hi link erlangBitType         Keyword
-
-hi link rubyBeginend          Keyword
-hi link rubyClass             Keyword
-hi link rubyModule            Keyword
-hi link rubyKeyword           Keyword
-hi link rubyOperator          Method
-hi link rubyIdentifier        Keyword
-hi link rubyClassVariable     Symbol
-hi link rubyInstanceVariable  Constant
-hi link rubyGlobalVariable    Constant
-hi link rubyClassVariable     Method
-hi link rubyConstant          Constant
-hi link rubySymbol            Symbol
-hi link rubyFunction          Constant
-hi link rubyControl           Keyword
-hi link rubyConditional       Keyword
-hi link rubyInterpolation     Interpolation
-hi link rubyInterpolationDelimiter    Interpolation
-hi link rubyRailsMethod       Method
-
-
