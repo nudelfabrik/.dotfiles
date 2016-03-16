@@ -132,6 +132,14 @@ let g:clang_complete_auto = 0
 let g:clang_auto_select = 0
 let g:clang_omnicppcomplete_compliance = 0
 let g:clang_make_default_keymappings = 0
-let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
+"let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 set completeopt-=preview
+
+let g:neomake_open_list = 2
+let g:neomake_c_enabled_makers=['make']
+    let g:neomake_error_sign = {
+\ 'text': '✘',
+\ 'texthl': 'ErrorMsg',
+\ }
+autocmd! BufWritePost *.cpp,*.c,*.h Neomake!
 
