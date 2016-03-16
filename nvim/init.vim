@@ -46,7 +46,7 @@ nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>f :NERDTreeToggle<cr>
 nnoremap <leader>c :TagbarToggle<CR>
-nnoremap <leader>t :terminal<CR>
+nnoremap <leader>t :10sp term://zsh<CR>
 
 "" Markdown Headlines
 nnoremap <leader>1 yypVr=
@@ -85,7 +85,7 @@ tnoremap <C-j> <C-\><C-n><C-w>j
 tnoremap <C-k> <C-\><C-n><C-w>k
 tnoremap <C-l> <C-\><C-n><C-w>l
 tnoremap <Esc> <C-\><C-n>
-tnoremap jj  <C-\><C-n>
+tnoremap jj <C-\><C-n>
 
 cnoremap w! w !sudo tee %
 cnoremap <C-a>  <Home>
@@ -127,11 +127,11 @@ function! s:my_cr_function()
 endfunction
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
+let g:deoplete#enable_at_startup = 1
 let g:clang_complete_auto = 0
 let g:clang_auto_select = 0
 let g:clang_omnicppcomplete_compliance = 0
 let g:clang_make_default_keymappings = 0
 let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 set completeopt-=preview
-"let g:clang_use_library = 1
 
