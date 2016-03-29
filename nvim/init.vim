@@ -128,7 +128,7 @@ let g:clang_make_default_keymappings = 0
 if has('mac')
     let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 else 
-    let g:clang_library_path='/usr/lib'
+    let g:clang_library_path='/usr/local/llvm35/lib'
 endif
 set completeopt-=preview
 
