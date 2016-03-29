@@ -11,7 +11,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
 Plug 'airblade/vim-gitgutter'
-Plug 'nudelfabrik/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'nudelfabrik/vim-airline-themes'
 Plug 'Shougo/deoplete.nvim'
 Plug 'benekastah/neomake'
 Plug 'Rip-Rip/clang_complete'
@@ -113,6 +114,7 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline_section_y = '%{airline#util#wrap(airline#parts#filetype(),0)}'
 let g:airline_section_x = '%{airline#extensions#tagbar#currenttag()}'
+let g:airline_section_z = '%{g:airline_symbols.linenr} %l:%v'
 
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
@@ -125,11 +127,13 @@ let g:clang_complete_auto = 0
 let g:clang_auto_select = 0
 let g:clang_omnicppcomplete_compliance = 0
 let g:clang_make_default_keymappings = 0
+
 if has('mac')
     let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 else 
     let g:clang_library_path='/usr/local/llvm35/lib'
 endif
+
 set completeopt-=preview
 
 let g:neomake_open_list = 2
