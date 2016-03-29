@@ -15,6 +15,8 @@ Plug 'nudelfabrik/vim-airline'
 Plug 'Shougo/deoplete.nvim'
 Plug 'benekastah/neomake'
 Plug 'Rip-Rip/clang_complete'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'fatih/vim-go'
 call plug#end()
 
 filetype plugin indent on
@@ -132,9 +134,10 @@ set completeopt-=preview
 
 let g:neomake_open_list = 2
 let g:neomake_c_enabled_makers=['make']
+let g:neomake_go_enabled_makers=['go']
     let g:neomake_error_sign = {
 \ 'text': '✘',
 \ 'texthl': 'ErrorMsg',
 \ }
-autocmd! BufWritePost *.cpp,*.c,*.h Neomake!
+autocmd! BufWritePost *.cpp,*.c,*.h,*.go Neomake!
 
