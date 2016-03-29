@@ -71,7 +71,7 @@ imap <c-e> <c-o>$
 imap <c-a> <c-o>^
 
 "" Windows
-nnoremap <C-j> <c-w>j           " switch btw. windows
+nnoremap <C-j> <c-w>j
 nnoremap <C-k> <c-w>k
 nnoremap <C-h> <c-w>h
 nnoremap <C-l> <c-w>l
@@ -111,15 +111,6 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline_section_y = '%{airline#util#wrap(airline#parts#filetype(),0)}'
 let g:airline_section_x = '%{airline#extensions#tagbar#currenttag()}'
-let g:clang_user_options='|| exit 0'
-
-" YCM
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-let g:ycm_extra_conf_globlist =  ['~/Documents/Dev/*', '~/Dev/*', '~/Developer/*']
-let g:ycm_server_use_vim_stdout = 1
-let g:ycm_server_log_level = 'debug'
 
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
