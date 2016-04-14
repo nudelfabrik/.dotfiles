@@ -23,6 +23,7 @@ call plug#end()
 filetype plugin indent on
 colorscheme smyck
 set background=dark
+language en_US
 
 "set wildmode=list:longest
 set wildmode=longest:full,full
