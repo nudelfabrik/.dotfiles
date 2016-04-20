@@ -1,0 +1,5 @@
+OPTIONS=race:elf,role:Ranger,gender:female
+OPTIONS=color
+OPTIONS=DECgraphics
+OPTIONS=pickup_burden:Unencumbered,pickup_types:!?+/$
+OPTIONS=pickup_thrown
