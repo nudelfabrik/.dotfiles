@@ -31,7 +31,6 @@ alias gpush='git push'
 # Mac specifics
 if [[ $(uname) == "Darwin" ]]; then
     alias f='open -a Finder ./'
-    alias neth='tmux -L nethack -c /usr/games/bin/nethack'
 fi
 
 # FreeBSD specifics
