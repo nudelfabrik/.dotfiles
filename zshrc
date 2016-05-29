@@ -8,6 +8,11 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr
 export GOPATH=$HOME/Developer/go
 export PATH=$PATH:$GOPATH/bin
 
+export FPATH=$FPATH:$HOME/.dotfiles/zsh/site-functions
+autoload -U deer
+zle -N deer
+bindkey '\ek' deer
+
 # Load all of the config files in ~/oh-my-zsh that end in .zsh
 for config_file ($ZSH/lib/*.zsh) source $config_file
 
