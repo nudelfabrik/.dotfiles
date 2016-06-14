@@ -4,7 +4,7 @@
 	signingkey = 7AB38851
 [core]
 	quotepath = false
-	editor = vim
+	editor = nvim
 [alias]
     st = status
     stat = status
