@@ -17,5 +17,6 @@ compinit -i
 
 # Custom autocorrects
 compdef ping6=ping
+compdef doas=sudo
 
 setopt CORRECT
