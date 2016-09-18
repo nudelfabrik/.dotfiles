@@ -1,6 +1,5 @@
 # ls colors
 autoload colors; colors;
-export LSCOLORS="Gxfxcxdxbxegedabagacad"
 #export LS_COLORS
 
 # Enable ls colors
@@ -13,6 +12,8 @@ fi
 if [[ $(uname) == "Darwin" ]] || [[ -z "$SSH_CLIENT" ]] ; then
     export POWERLINE=true
 fi
+
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 #setopt no_beep
 setopt auto_cd
