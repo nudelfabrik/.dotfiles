@@ -18,6 +18,7 @@ Plug 'benekastah/neomake'
 Plug 'Rip-Rip/clang_complete'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'fatih/vim-go'
+Plug 'cespare/vim-toml'
 call plug#end()
 
 filetype plugin indent on
