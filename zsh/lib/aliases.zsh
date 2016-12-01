@@ -27,13 +27,3 @@ alias glg="git log --graph --pretty=format:'%Cred%h%Creset - %Cgreen%an%Creset -
 #alias glg='git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --'
 alias gp='git push'
 alias gpush='git push'
-
-# Mac specifics
-if [[ $(uname) == "Darwin" ]]; then
-    alias f='open -a Finder ./'
-fi
-
-# FreeBSD specifics
-if [[ $(uname) == "FreeBSD" ]]; then
-    alias pfreload='sudo pfctl -f /etc/pf.conf'
-fi
