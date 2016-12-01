@@ -9,10 +9,6 @@ then
   ls --color -d . &>/dev/null 2>&1 && alias ls='ls --color=tty' || alias ls='ls -G'
 fi
 
-if [[ $(uname) == "Darwin" ]] || [[ -z "$SSH_CLIENT" ]] ; then
-    export POWERLINE=true
-fi
-
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 #setopt no_beep
