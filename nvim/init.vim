@@ -146,5 +146,5 @@ let g:neomake_go_enabled_makers=['go']
 \ 'text': '✘',
 \ 'texthl': 'ErrorMsg',
 \ }
-autocmd! BufWritePost *.cpp,*.c,*.h,*.go Neomake!
+autocmd! BufWritePost *.cpp,*.c,*.h,*.go Neomake
 
