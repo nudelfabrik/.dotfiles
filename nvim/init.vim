@@ -113,6 +113,7 @@ hi MatchParen ctermfg=black
 set noshowmode
 let g:gitgutter_realtime = 0
 let g:airline_powerline_fonts=1
+let g:airline_theme = 'base16_smyck'
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline_section_y = '%{airline#util#wrap(airline#parts#filetype(),0)}'
