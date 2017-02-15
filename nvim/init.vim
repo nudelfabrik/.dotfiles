@@ -17,6 +17,7 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'benekastah/neomake'
 Plug 'Rip-Rip/clang_complete'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'vim-scripts/Conque-GDB'
 Plug 'fatih/vim-go'
 Plug 'cespare/vim-toml'
 Plug 'keith/swift.vim'
@@ -149,3 +150,24 @@ let g:neomake_go_enabled_makers=['go']
 \ }
 autocmd! BufWritePost *.cpp,*.c,*.h,*.go Neomake
 
+let g:ConqueTerm_Color = 2                                                            
+let g:ConqueTerm_CloseOnEnd = 1                                                       
+let g:ConqueTerm_StartMessages = 0                                                    
+let g:ConqueGdb_Leader = 'g'
+                                                                                      
+function DebugSession()                                                               
+    silent make -o vimgdb -gcflags "-N -l"                                            
+    redraw!                                                                           
+    if (filereadable("vimgdb"))                                                       
+        ConqueGdb vimgdb                                                              
+    else                                                                              
+        echom "Couldn't find debug file"                                              
+    endif                                                                             
+endfunction                                                                           
+function DebugSessionCleanup(term)                                                    
+    if (filereadable("vimgdb"))                                                       
+        let ds=delete("vimgdb")                                                       
+    endif                                                                             
+endfunction                                                                           
+call conque_term#register_function("after_close", "DebugSessionCleanup")              
+nmap <leader>d :call DebugSession()<CR>;  
