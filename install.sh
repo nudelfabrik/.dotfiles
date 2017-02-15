@@ -13,6 +13,7 @@ ln -s ~/.dotfiles/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/zshrc ~/.zshrc
 ln -s ~/.dotfiles/todo ~/.todo
+ln -s ~/.dotfiles/psqlrc ~/.psqlrc
 mkdir ~/.vimtmp
 git submodule init
 git submodule update
