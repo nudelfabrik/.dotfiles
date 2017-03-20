@@ -34,17 +34,19 @@ set cursorline
 set number
 
 "" Whitespace
-set nowrap                      " don't wrap lines
-set tabstop=4                   " see vimcast.org
+set nowrap          " don't wrap lines
+set tabstop=4       " see vimcast.org
 set shiftwidth=4
 set softtabstop=4
 set expandtab
 
 "" Searching
-set ignorecase                  " searches are case insensitive...
-set smartcase                   " ... unless they contain at least one capital letter
-set gdefault                    " regex /g at end
-set showmatch
+set ignorecase      " searches are case insensitive...
+set smartcase       " ... unless they contain at least one capital letter
+set gdefault        " regex /g at end
+
+set lazyredraw      " redraw only when we need to.
+set showmatch   
 
 "" Mapleader
 let mapleader = "\<Space>"
