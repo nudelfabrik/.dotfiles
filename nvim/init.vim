@@ -147,7 +147,7 @@ endif
 set completeopt-=preview
 
 let g:neomake_open_list = 2
-let g:neomake_c_enabled_makers=['make']
+let g:neomake_c_enabled_makers=['clang']
 let g:neomake_go_enabled_makers=['go']
     let g:neomake_error_sign = {
 \ 'text': '✘',
