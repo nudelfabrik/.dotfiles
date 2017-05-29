@@ -108,6 +108,9 @@ set directory=~/.vimtmp
 " Show syntax highlighting groups for word under cursor
 nmap <c-p> :echo synIDattr(synID(line("."), col("."), 1), "name") <CR>
 
+nmap <Leader>b :GoToggleBreakpoint()<CR>
+nmap <Leader>d :GoDebug()<CR>
+
 hi StatusLine ctermbg=green
 hi StatusLine ctermfg=black
 hi MatchParen ctermbg=green
