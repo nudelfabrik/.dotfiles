@@ -1,2 +1,2 @@
-setopt correct_all
+setopt correct
 
