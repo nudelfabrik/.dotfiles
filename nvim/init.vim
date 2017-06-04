@@ -19,7 +19,8 @@ Plug 'Rip-Rip/clang_complete'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'fatih/vim-go'
 Plug 'cespare/vim-toml'
-Plug 'jodosha/vim-godebug'
+"Plug 'jodosha/vim-godebug'
+Plug 'nudelfabrik/vim-godebug'
 Plug 'keith/swift.vim'
 call plug#end()
 
@@ -149,9 +150,14 @@ set completeopt-=preview
 let g:neomake_open_list = 2
 let g:neomake_c_enabled_makers=['clang']
 let g:neomake_go_enabled_makers=['go']
-    let g:neomake_error_sign = {
+let g:neomake_error_sign = {
 \ 'text': '✘',
 \ 'texthl': 'ErrorMsg',
+\ }
+
+let g:godebug_breakpoint_sign = {
+\ 'text': '◉',
+\ 'texthl': 'ModeMsg',
 \ }
 autocmd! BufWritePost *.cpp,*.c,*.h,*.go Neomake
 
