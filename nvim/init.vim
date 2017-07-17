@@ -117,6 +117,7 @@ hi StatusLine ctermfg=black
 hi MatchParen ctermbg=green
 hi MatchParen ctermfg=black
 
+" airline
 set noshowmode
 let g:gitgutter_realtime = 0
 let g:airline_powerline_fonts=1
@@ -133,6 +134,7 @@ function! s:my_cr_function()
 endfunction
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
+" autocomplete, automake
 let g:deoplete#enable_at_startup = 1
 let g:clang_complete_auto = 0
 let g:clang_auto_select = 0
@@ -159,5 +161,21 @@ let g:godebug_breakpoint_sign = {
 \ 'text': '◉',
 \ 'texthl': 'ModeMsg',
 \ }
+
+" go-vim settings
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_types = 1
+
+let g:go_auto_sameids = 1
+
+" Auto go imports
+let g:go_fmt_command = "goimports"
+
 autocmd! BufWritePost *.cpp,*.c,*.h,*.go Neomake
 
