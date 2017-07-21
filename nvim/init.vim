@@ -20,7 +20,7 @@ Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'fatih/vim-go'
 Plug 'cespare/vim-toml'
 "Plug 'jodosha/vim-godebug'
-Plug 'nudelfabrik/vim-godebug'
+Plug 'nudelfabrik/vim-godebug', { 'branch': 'customize-signs' }
 Plug 'keith/swift.vim'
 call plug#end()
 
