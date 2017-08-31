@@ -20,3 +20,10 @@ compdef ping6=ping
 compdef doas=sudo
 
 setopt CORRECT
+
+export GPG_TTY=$(tty)
+if [ -f "${HOME}/.gpg-agent-info" ]; then
+    . "${HOME}/.gpg-agent-info"
+    export GPG_AGENT_INFO
+    export SSH_AUTH_SOCK
+fi
