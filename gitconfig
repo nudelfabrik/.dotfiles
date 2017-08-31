@@ -1,7 +1,7 @@
 [user]
 	name = Benedikt Scholtes
-	email = bene.scholtes@fourtytwo.xyz
-	signingkey = 7AB38851
+	email = benedikt.scholtes@fourtytwo.xyz
+	signingkey = E263AB832183D3D4
 [core]
 	quotepath = false
 	editor = nvim
