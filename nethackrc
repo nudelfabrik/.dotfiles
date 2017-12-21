@@ -1,4 +1,5 @@
-OPTIONS=race:elf,role:Ranger,gender:female
+#OPTIONS=race:elf,role:Ranger,gender:female
+OPTIONS=race:human,role:Valkyrie,gender:female,align=lawful
 OPTIONS=name:Rejja
 OPTIONS=color
 OPTIONS=DECgraphics
