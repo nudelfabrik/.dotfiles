@@ -94,11 +94,15 @@ promt_git() {
 
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
-  local user=`whoami`
+    local user=`whoami`
 
-  if [[ -n "$SSH_CLIENT" ]]; then
-  prompt_segment black default "%m"
-  fi
+    if [[ -n "$SSH_CLIENT" ]]; then
+        if [[ $(hostname -s) == "mail" ]]; then
+            prompt_segment black default "%M"
+        else
+            prompt_segment black default "%m"
+        fi
+    fi
 }
 
 prompt_dir() {
