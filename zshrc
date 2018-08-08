@@ -21,9 +21,12 @@ compdef doas=sudo
 
 setopt CORRECT
 
-export GPG_TTY=$(tty)
-if [ -f "${HOME}/.gpg-agent-info" ]; then
-    . "${HOME}/.gpg-agent-info"
-    export GPG_AGENT_INFO
-    export SSH_AUTH_SOCK
-fi
+#export GPG_TTY="$(tty)"
+#export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+#gpgconf --launch gpg-agent
+#export GPG_TTY=$(tty)
+#if [ -f "${HOME}/.gpg-agent-info" ]; then
+#    . "${HOME}/.gpg-agent-info"
+#    export GPG_AGENT_INFO
+#    export SSH_AUTH_SOCK
+#fi
