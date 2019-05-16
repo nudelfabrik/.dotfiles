@@ -1,6 +1,6 @@
 #OPTIONS=race:elf,role:Ranger,gender:female
 OPTIONS=race:human,role:Valkyrie,gender:female,align=lawful
-OPTIONS=name:Rejja
+OPTIONS=name:Val
 OPTIONS=color
 OPTIONS=DECgraphics
 OPTIONS=pickup_burden:Unencumbered,pickup_types:!?+/$
