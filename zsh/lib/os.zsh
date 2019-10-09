@@ -15,3 +15,8 @@ if [[ $(uname) == "FreeBSD" ]]; then
     alias pfreload='sudo pfctl -f /etc/pf.conf'
     alias dig='drill'
 fi
+
+# pip for unix OS, where user is bene
+if [[ $(uname) != "Darwin" ]]; then
+    export PATH=$PATH:/home/bene/.local/bin
+fi
