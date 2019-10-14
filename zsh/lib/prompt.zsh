@@ -123,10 +123,20 @@ prompt_status() {
   [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
 }
 
+# Virtualenv: current working virtualenv
+export VIRTUAL_ENV_DISABLE_PROMT=1
+prompt_virtualenv() {
+local virtualenv_path="$VIRTUAL_ENV"
+if [[ -n $virtualenv_path ]]; then
+    prompt_segment green black " $(basename $virtualenv_path)"
+fi
+}
+
 ## Main prompt
 build_prompt() {
   RETVAL=$?
   prompt_status
+  prompt_virtualenv
   prompt_context
   prompt_dir
   promt_git
