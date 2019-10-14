@@ -16,6 +16,7 @@ Plug 'nudelfabrik/vim-airline-themes'
 Plug 'Shougo/deoplete.nvim'
 Plug 'benekastah/neomake'
 Plug 'Rip-Rip/clang_complete'
+Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'fatih/vim-go'
 Plug 'cespare/vim-toml'
