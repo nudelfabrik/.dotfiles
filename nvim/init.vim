@@ -178,3 +178,6 @@ let g:go_fmt_command = "goimports"
 
 autocmd! BufWritePost *.cpp,*.c,*.h,*.go,*.py Neomake
 
+" Nerdtree
+
+let g:NERDTreeIgnore = ['^__pycache__$']
