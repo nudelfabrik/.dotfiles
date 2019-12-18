@@ -23,6 +23,9 @@ Plug 'cespare/vim-toml'
 "Plug 'jodosha/vim-godebug'
 Plug 'nudelfabrik/vim-godebug', { 'branch': 'customize-signs' }
 Plug 'keith/swift.vim'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'dense-analysis/ale'
 call plug#end()
 
 filetype plugin indent on
@@ -150,13 +153,13 @@ endif
 
 set completeopt-=preview
 
-let g:neomake_open_list = 2
-let g:neomake_c_enabled_makers=['clang']
-let g:neomake_go_enabled_makers=['go']
-let g:neomake_error_sign = {
-\ 'text': '✘',
-\ 'texthl': 'ErrorMsg',
-\ }
+"let g:neomake_open_list = 2
+"let g:neomake_c_enabled_makers=['clang']
+"let g:neomake_go_enabled_makers=['go']
+"let g:neomake_error_sign = {
+"\ 'text': '✘',
+"\ 'texthl': 'ErrorMsg',
+"\ }
 
 let g:godebug_breakpoint_sign = {
 \ 'text': '◉',
@@ -176,8 +179,27 @@ let g:go_highlight_types = 1
 " Auto go imports
 let g:go_fmt_command = "goimports"
 
-autocmd! BufWritePost *.cpp,*.c,*.h,*.go,*.py Neomake
+"autocmd! BufWritePost *.cpp,*.c,*.h,*.go,*.py Neomake
 
 " Nerdtree
 
 let g:NERDTreeIgnore = ['^__pycache__$']
+
+" python
+"au BufNewFile,BufRead *.py set foldmethod=indent
+
+"ale
+let g:ale_linters_explicit = 1
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '!'
+let g:ale_linters = {
+\   'python': ['flake8'],
+\}
+
+
+" fzf
+" Mapping selecting mappings
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
