@@ -1,0 +1,14 @@
+export LANG=en_US.UTF-8
+
+# Load and run compinit
+autoload -U compinit
+compinit -i
+
+alias lsa='ls -a'
+alias la='ls -a'
+alias rmr='rm -r'
+alias gstat='git stat'
+alias gadd='git add .'
+alias gcmt='git commit'
+alias glg="git log --graph --pretty=format:'%Cred%h%Creset - %Cgreen%an%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %Creset' --abbrev-commit --date=short"
+alias cd..='cd ..'

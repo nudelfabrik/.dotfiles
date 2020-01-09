@@ -1,0 +1,18 @@
+set encoding=utf-8
+syntax enable
+filetype plugin indent on
+set backspace=indent,eol,start
+set number
+
+"" remap
+inoremap jj <ESC>
+
+"" Windows
+nnoremap <c-j> <c-w>j           " switch btw. windows
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+set splitbelow
+set splitright
+
+cnoremap w! w !sudo tee %
