@@ -193,7 +193,7 @@ let g:ale_linters_explicit = 1
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '!'
 let g:ale_linters = {
-\   'python': ['flake8'],
+\   'python': ['pylint'],
 \   'go': ['gofmt', 'gobuild'],
 \}
 
