@@ -21,21 +21,3 @@ compdef ping6=ping
 compdef doas=sudo
 
 setopt CORRECT
-
-#export SSH_AUTH_SOCK=$HOME/.sekey/ssh-agent.ssh
-
-#export GPG_TTY=$(tty)
-#gpgconf --launch gpg-agent
-#export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-
-#export GPG_TTY=$(tty)
-#if [ -f "${HOME}/.gpg-agent-info" ]; then
-#    . "${HOME}/.gpg-agent-info"
-#    export GPG_AGENT_INFO
-#    export SSH_AUTH_SOCK
-#fi
-
-#export GPG_TTY=$(tty)
-#gpg-connect-agent updatestartuptty /bye > /dev/null
-#unset SSH_AGENT_PID
-#export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
