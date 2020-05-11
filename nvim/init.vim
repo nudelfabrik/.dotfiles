@@ -14,14 +14,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'nudelfabrik/vim-airline-themes'
 Plug 'Shougo/deoplete.nvim'
-Plug 'benekastah/neomake'
-Plug 'Rip-Rip/clang_complete'
 Plug 'deoplete-plugins/deoplete-jedi'
-Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 Plug 'fatih/vim-go'
 Plug 'cespare/vim-toml'
-"Plug 'jodosha/vim-godebug'
-Plug 'nudelfabrik/vim-godebug', { 'branch': 'customize-signs' }
 Plug 'keith/swift.vim'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
@@ -113,8 +109,6 @@ set directory=~/.vimtmp
 " Show syntax highlighting groups for word under cursor
 nmap <c-p> :echo synIDattr(synID(line("."), col("."), 1), "name") <CR>
 
-nmap <Leader>b :GoToggleBreakpoint()<CR>
-nmap <Leader>d :GoDebug()<CR>
 
 hi StatusLine ctermbg=green
 hi StatusLine ctermfg=black
@@ -138,33 +132,10 @@ function! s:my_cr_function()
 endfunction
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
-" autocomplete, automake
+" deoplete
 let g:deoplete#enable_at_startup = 1
-let g:clang_complete_auto = 0
-let g:clang_auto_select = 0
-let g:clang_omnicppcomplete_compliance = 0
-let g:clang_make_default_keymappings = 0
-
-if has('mac')
-    let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
-else 
-    let g:clang_library_path='/usr/local/llvm35/lib'
-endif
 
 set completeopt-=preview
-
-"let g:neomake_open_list = 2
-"let g:neomake_c_enabled_makers=['clang']
-"let g:neomake_go_enabled_makers=['go']
-"let g:neomake_error_sign = {
-"\ 'text': '✘',
-"\ 'texthl': 'ErrorMsg',
-"\ }
-
-let g:godebug_breakpoint_sign = {
-\ 'text': '◉',
-\ 'texthl': 'ModeMsg',
-\ }
 
 " go-vim settings
 let g:go_highlight_build_constraints = 1
@@ -175,14 +146,23 @@ let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_types = 1
-
-" Auto go imports
+let g:go_debug_log = 0
+let g:go_debug_log_output = 'debugger'
+let g:go_debug_breakpoint_sign_text = '◉'
 let g:go_fmt_command = "goimports"
+let g:go_highlight_debug = 1
+let g:go_debug_windows = {
+\ 'vars':  'rightbelow 60vnew',
+\ }
+hi GoDebugCurrent term=reverse  ctermbg=12  ctermfg=0 guibg=DarkBlue guifg=White
 
-"autocmd! BufWritePost *.cpp,*.c,*.h,*.go,*.py Neomake
+nmap <Leader>b :GoDebugBreakpoint<CR>
+nmap <Leader>d :GoDebugStart<CR>
+nmap <Leader>n :GoDebugNext<CR>
+nmap <Leader>c :GoDebugContinue<CR>
+
 
 " Nerdtree
-
 let g:NERDTreeIgnore = ['^__pycache__$']
 
 " python
@@ -194,7 +174,7 @@ let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '!'
 let g:ale_linters = {
 \   'python': ['pylint'],
-\   'go': ['gofmt', 'gobuild'],
+\   'go': ['gofmt', 'gobuild', 'gopls'],
 \}
 
 
