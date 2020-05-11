@@ -2,7 +2,7 @@
 
 # backup
 mkdir ~/dotfiles_backup 
-mv ~/.bash_profile ~/.vim ~/.vimrc ~/.gitconfig ~/.tmux.conf ~/.screenrc ~/.teamocil ~/dotfiles_backup
+mv ~/.bash_profile ~/.vim ~/.vimrc ~/.gitconfig ~/.tmux.conf ~/.screenrc ~/dotfiles_backup
 # make symlinks
 ln -s ~/.dotfiles/bash_profile ~/.bash_profile
 ln -s ~/.dotfiles/vim ~/.vim
@@ -12,7 +12,6 @@ ln -s ~/.dotfiles/nvim $XDG_CONFIG_HOME/nvim
 ln -s ~/.dotfiles/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/zshrc ~/.zshrc
-ln -s ~/.dotfiles/todo ~/.todo
 ln -s ~/.dotfiles/psqlrc ~/.psqlrc
 mkdir ~/.vimtmp
 git submodule init
