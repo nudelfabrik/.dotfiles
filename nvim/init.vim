@@ -9,7 +9,6 @@ Plug 'myusuf3/numbers.vim'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
-Plug 'majutsushi/tagbar'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'nudelfabrik/vim-airline-themes'
@@ -55,8 +54,6 @@ let mapleader = "\<Space>"
 nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>f :NERDTreeToggle<cr>
-nnoremap <leader>c :TagbarToggle<CR>
-nnoremap <leader>t :10sp term://zsh<CR>
 
 "" Markdown Headlines
 nnoremap <leader>1 yypVr=
@@ -70,6 +67,10 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
+
+"" fzf
+nnoremap <leader>t :BTags<cr>
+nnoremap <leader>T :Tags<cr>
 
 vmap <Leader>v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
