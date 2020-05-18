@@ -124,7 +124,6 @@ let g:airline_theme = 'base16_smyck'
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline_section_y = '%{airline#util#wrap(airline#parts#filetype(),0)}'
-let g:airline_section_x = '%{airline#extensions#tagbar#currenttag()}'
 let g:airline_section_z = '%{g:airline_symbols.linenr} %l:%v'
 
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
