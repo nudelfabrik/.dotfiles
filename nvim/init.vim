@@ -176,6 +176,7 @@ let g:ale_linters = {
 \   'python': ['pylint'],
 \   'go': ['gofmt', 'gobuild', 'gomod', 'goimports', 'govet', 'golangci-lint'],
 \}
+let g:ale_go_golangci_lint_option = ''
 
 
 " fzf
