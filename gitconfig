@@ -1,6 +1,7 @@
 [core]
 	quotepath = false
 	editor = nvim
+	attributesfile = ~/.dotfiles/gitattributes
 [alias]
     st = status
     stat = status
