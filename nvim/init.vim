@@ -134,6 +134,7 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
+let g:python3_host_prog = '/usr/local/bin/python3.9'
 
 set completeopt-=preview
 
