@@ -28,8 +28,8 @@
 [user]
 	useConfigOnly = true
 [user "github"]
-	name = Benedikt Scholtes
-	email = benedikt.scholtes@fourtytwo.xyz
+	name = Jess Scholtes
+	email = jess.scholtes@fourtytwo.xyz
 	signingkey = E263AB832183D3D4
 [user "RWTH"]
 	name = Benedikt Scholtes
