@@ -10,6 +10,8 @@ export GOPATH=$HOME/Developer/go
 export PATH=$PATH:$GOPATH/bin
 export LANG=en_US.UTF-8
 
+export SSH_AUTH_SOCK="$(brew --prefix)/var/run/yubikey-agent.sock"
+
 # Load all of the config files in ~/oh-my-zsh that end in .zsh
 for config_file ($ZSH/lib/*.zsh) source $config_file
 
