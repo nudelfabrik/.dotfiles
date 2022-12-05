@@ -2,6 +2,7 @@
 if [[ $(uname) == "Darwin" ]]; then
     alias f='open -a Finder ./'
     export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+    export PATH=$PATH:$HOME/Library/Python/3.7/bin
     alias drill='dig'
 fi
 
@@ -16,7 +17,10 @@ if [[ $(uname) == "FreeBSD" ]]; then
     alias dig='drill'
 fi
 
-# pip for unix OS, where user is bene
-if [[ $(uname) != "Darwin" ]]; then
-    export PATH=$PATH:/home/bene/.local/bin
+# Linux
+if [[ $(uname) == "Linux" ]]; then
+    export SHELL=/usr/bin/zsh
+    export PATH=$PATH:$HOME/.local/bin
+    alias pbcopy='xsel --clipboard --input'
+    alias pbpaste='xsel --clipboard --output'
 fi
