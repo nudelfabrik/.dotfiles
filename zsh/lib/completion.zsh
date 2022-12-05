@@ -59,3 +59,12 @@ if [ "x$COMPLETION_WAITING_DOTS" = "xtrue" ]; then
 fi
 
 zstyle ':completion:*' special-dirs true
+
+autoload -U compinit
+compinit -i
+autoload -U +X bashcompinit && bashcompinit
+
+if [ "x$USERNAME" = "xbsc" ]; then
+    source /opt/bbox/lib/app/bbox_complete.sh
+    source /opt/bbox/lib/app/btinit_complete.sh
+fi

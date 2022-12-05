@@ -15,12 +15,15 @@ Plug 'nudelfabrik/vim-airline-themes'
 Plug 'Shougo/deoplete.nvim'
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+Plug 'artur-shaik/vim-javacomplete2'
 Plug 'fatih/vim-go'
 Plug 'cespare/vim-toml'
 Plug 'keith/swift.vim'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'dense-analysis/ale'
+Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'google/vim-jsonnet'
 call plug#end()
 
 filetype plugin indent on
@@ -89,6 +92,36 @@ nnoremap <C-l> <c-w>l
 set splitbelow
 set splitright
 
+autocmd BufRead,BufNewFile *.groovy set ft=Jenkinsfile
+
+
+function! TextEnableCodeSnip(filetype,start,end,textSnipHl) abort
+  let ft=toupper(a:filetype)
+  let group='textGroup'.ft
+  if exists('b:current_syntax')
+    let s:current_syntax=b:current_syntax
+    " Remove current syntax definition, as some syntax files (e.g. cpp.vim)
+    " do nothing if b:current_syntax is defined.
+    unlet b:current_syntax
+  endif
+  execute 'syntax include @'.group.' syntax/'.a:filetype.'.vim'
+  try
+    execute 'syntax include @'.group.' after/syntax/'.a:filetype.'.vim'
+  catch
+  endtry
+  if exists('s:current_syntax')
+    let b:current_syntax=s:current_syntax
+  else
+    unlet b:current_syntax
+  endif
+  execute 'syntax region textSnip'.ft.'
+  \ matchgroup='.a:textSnipHl.'
+  \ keepend
+  \ start="'.a:start.'" end="'.a:end.'"
+  \ contains=@'.group
+endfunction
+
+
 " Terminal
 autocmd BufWinEnter,WinEnter term://* startinsert
 tnoremap <C-h> <C-\><C-n><C-w>h
@@ -123,7 +156,7 @@ let g:airline_powerline_fonts=1
 let g:airline_theme = 'base16_smyck'
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#hunks#non_zero_only = 1
-let g:airline_section_y = '%{airline#util#wrap(airline#parts#filetype(),0)}'
+"let g:airline_section_x = '%{airline#util#wrap(airline#parts#filetype(),0)}'
 let g:airline_section_z = '%{g:airline_symbols.linenr} %l:%v'
 
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
@@ -173,11 +206,12 @@ let g:NERDTreeIgnore = ['^__pycache__$']
 let g:ale_linters_explicit = 1
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '!'
+let g:ale_go_golangci_lint_options = "" 
 let g:ale_linters = {
-\   'python': ['pylint'],
+\   'python': ['pycodestyle'],
 \   'go': ['gofmt', 'gobuild', 'gomod', 'goimports', 'govet', 'golangci-lint'],
 \}
-let g:ale_go_golangci_lint_option = ''
+let g:ale_python_pycodestyle_options = "--max-line-length=150"
 
 
 " fzf
