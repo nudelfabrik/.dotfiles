@@ -132,10 +132,17 @@ if [[ -n $virtualenv_path ]]; then
 fi
 }
 
+prompt_btool() {
+if [[ -v BTOOL_WORKSPACE_NAME ]]; then
+    prompt_segment magenta black "$(echo $BTOOL_WORKSPACE_NAME)"
+fi
+}
+
 ## Main prompt
 build_prompt() {
   RETVAL=$?
   prompt_status
+  prompt_btool
   prompt_virtualenv
   prompt_context
   prompt_dir
