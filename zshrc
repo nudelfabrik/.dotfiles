@@ -20,3 +20,5 @@ compdef ping6=ping
 compdef doas=sudo
 
 setopt CORRECT
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
