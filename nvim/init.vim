@@ -15,7 +15,6 @@ Plug 'nudelfabrik/vim-airline-themes'
 Plug 'Shougo/deoplete.nvim'
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
-Plug 'artur-shaik/vim-javacomplete2'
 Plug 'fatih/vim-go'
 Plug 'cespare/vim-toml'
 Plug 'keith/swift.vim'
@@ -24,6 +23,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'dense-analysis/ale'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'google/vim-jsonnet'
+Plug 'hashivim/vim-terraform'
 call plug#end()
 
 filetype plugin indent on
@@ -93,6 +93,7 @@ set splitbelow
 set splitright
 
 autocmd BufRead,BufNewFile *.groovy set ft=Jenkinsfile
+autocmd FileType terraform setlocal shiftwidth=2 softtabstop=2 expandtab
 
 
 function! TextEnableCodeSnip(filetype,start,end,textSnipHl) abort
@@ -210,6 +211,7 @@ let g:ale_go_golangci_lint_options = ""
 let g:ale_linters = {
 \   'python': ['pycodestyle'],
 \   'go': ['gofmt', 'gobuild', 'gomod', 'goimports', 'govet', 'golangci-lint'],
+\   'terraform': ['terraform-fmt-fixer', 'terraform'],
 \}
 let g:ale_python_pycodestyle_options = "--max-line-length=150"
 
@@ -220,3 +222,5 @@ nmap <leader><tab> <plug>(fzf-maps-n)
 xmap <leader><tab> <plug>(fzf-maps-x)
 omap <leader><tab> <plug>(fzf-maps-o)
 
+" Terraform
+let g:terraform_fmt_on_save = 1
