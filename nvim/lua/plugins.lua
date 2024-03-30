@@ -21,10 +21,12 @@ require("lazy").setup({
     "airblade/vim-gitgutter",
     "nvim-tree/nvim-tree.lua",
     "vim-airline/vim-airline",
-    "vim-airline/vim-airline-themes",
+    "nudelfabrik/vim-airline-themes",
     "nvim-tree/nvim-web-devicons",
     "neovim/nvim-lspconfig",
     "hrsh7th/nvim-cmp",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-path",
     "hrsh7th/cmp-nvim-lsp",
     "saadparwaiz1/cmp_luasnip",
     "L3MON4D3/LuaSnip",
@@ -38,8 +40,10 @@ vim.g.airline_powerline_fonts=1
 vim.g.airline_theme = 'smyck'
 vim.g['airline#extensions#whitespace#enabled'] = 0
 vim.g['airline#extensions#hunks#non_zero_only'] = 1
-vim.g.airline_section_y = '%{airline#util#wrap(airline#parts#filetype(),0)}'
+--vim.g.airline_section_y = '%{airline#util#wrap(airline#parts#filetype(),0)}'
 vim.g.airline_section_z = '%{g:airline_symbols.linenr} %l:%v'
+vim.g.airline_left_sep = ''
+vim.g.airline_right_sep = ''
 
 -- numbers
 local numbers_exclude = vim.g.numbers_exclude
