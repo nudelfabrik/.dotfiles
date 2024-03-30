@@ -5,7 +5,6 @@ mkdir ~/dotfiles_backup
 mv ~/.bash_profile ~/.vim ~/.vimrc ~/.gitconfig ~/.tmux.conf ~/.screenrc ~/dotfiles_backup
 # make symlinks
 ln -s ~/.dotfiles/bash_profile ~/.bash_profile
-ln -s ~/.dotfiles/vim ~/.vim
 ln -s ~/.dotfiles/vimrc ~/.vimrc
 mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
 ln -s ~/.dotfiles/nvim $XDG_CONFIG_HOME/nvim
