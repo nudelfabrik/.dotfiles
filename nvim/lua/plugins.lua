@@ -15,24 +15,36 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Install Plugins
 require("lazy").setup({
-  "nvim-tree/nvim-tree.lua",
-  "vim-airline/vim-airline",
-  "nudelfabrik/vim-airline-themes",
-  "nvim-tree/nvim-web-devicons",
+    "tpope/vim-fugitive",
+    "myusuf3/numbers.vim",
+    "tpope/vim-surround",
+    "airblade/vim-gitgutter",
+    "nvim-tree/nvim-tree.lua",
+    "vim-airline/vim-airline",
+    "vim-airline/vim-airline-themes",
+    "nvim-tree/nvim-web-devicons",
+    "neovim/nvim-lspconfig",
+    "hrsh7th/nvim-cmp",
+    "hrsh7th/cmp-nvim-lsp",
+    "saadparwaiz1/cmp_luasnip",
+    "L3MON4D3/LuaSnip",
 })
 
--- Airline
-vim.cmd([[
-    set noshowmode
-    let g:gitgutter_realtime = 0
-    let g:airline_powerline_fonts=1
-    let g:airline_theme = 'base16_smyck'
-    let g:airline#extensions#whitespace#enabled = 0
-    let g:airline#extensions#hunks#non_zero_only = 1
-    let g:airline_section_y = '%{airline#util#wrap(airline#parts#filetype(),0)}'
-    let g:airline_section_z = '%{g:airline_symbols.linenr} %l:%v'
-]])
 
+-- Airline
+vim.opt.showmode=false
+vim.g.gitgutter_realtime = 0
+vim.g.airline_powerline_fonts=1
+vim.g.airline_theme = 'smyck'
+vim.g['airline#extensions#whitespace#enabled'] = 0
+vim.g['airline#extensions#hunks#non_zero_only'] = 1
+vim.g.airline_section_y = '%{airline#util#wrap(airline#parts#filetype(),0)}'
+vim.g.airline_section_z = '%{g:airline_symbols.linenr} %l:%v'
+
+-- numbers
+local numbers_exclude = vim.g.numbers_exclude
+table.insert(numbers_exclude, "NvimTree")
+vim.g.numbers_exclude = numbers_exclude
 
 -- nvim-tree.lua
 -- disable netrw at the very start of your init.lua

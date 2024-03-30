@@ -29,7 +29,7 @@ vim.opt.gdefault=true
 
 vim.opt.lazyredraw=true
 vim.opt.showmatch=true
-
+vim.opt.iskeyword:remove({'_'})
 
 vim.opt.backupdir=HOME .."/.vimtmp"
 vim.opt.directory=HOME .. "/.vimtmp"
