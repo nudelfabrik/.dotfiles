@@ -43,3 +43,5 @@
 [user "Ibeo"]
 	name = Jess Scholtes
 	email = jess.scholtes@microvision.eu
+[pull]
+	rebase = true
