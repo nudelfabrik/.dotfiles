@@ -73,7 +73,7 @@ promt_git() {
             then
                 prompt_segment yellow black
             else
-                prompt_segment blue black
+                prompt_segment green black
             fi
         fi
         # Look at http://zsh.sourceforge.net/Doc/Release/User-Contributions.html#Version-Control-Information
@@ -106,7 +106,7 @@ prompt_context() {
 }
 
 prompt_dir() {
-  prompt_segment green black '%~'
+  prompt_segment blue black '%~'
 }
 
 # Status:
