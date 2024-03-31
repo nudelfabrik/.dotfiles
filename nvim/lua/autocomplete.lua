@@ -112,3 +112,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<Leader>re', vim.lsp.buf.references, opts)
   end,
 })
+
+local function sign_define(args)
+  vim.fn.sign_define(args.name, {
+    texthl = args.name,
+    text = args.text,
+    numhl = ''
+  })
+end
+
+sign_define({name = 'DiagnosticSignError', text = ''})
+sign_define({name = 'DiagnosticSignWarn', text = ''})
+sign_define({name = 'DiagnosticSignHint', text = ''})
+sign_define({name = 'DiagnosticSignInfo', text = ''})

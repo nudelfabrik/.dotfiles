@@ -19,8 +19,9 @@ require("lazy").setup({
     "myusuf3/numbers.vim",
     "tpope/vim-surround",
     "airblade/vim-gitgutter",
+    "folke/tokyonight.nvim",
     "nvim-tree/nvim-tree.lua",
-    "vim-airline/vim-airline",
+    "nvim-lualine/lualine.nvim",
     "nudelfabrik/vim-airline-themes",
     "nvim-tree/nvim-web-devicons",
     "neovim/nvim-lspconfig",
@@ -33,17 +34,33 @@ require("lazy").setup({
 })
 
 
--- Airline
-vim.opt.showmode=false
-vim.g.gitgutter_realtime = 0
-vim.g.airline_powerline_fonts=1
-vim.g.airline_theme = 'smyck'
-vim.g['airline#extensions#whitespace#enabled'] = 0
-vim.g['airline#extensions#hunks#non_zero_only'] = 1
---vim.g.airline_section_y = '%{airline#util#wrap(airline#parts#filetype(),0)}'
-vim.g.airline_section_z = '%{g:airline_symbols.linenr} %l:%v'
-vim.g.airline_left_sep = ''
-vim.g.airline_right_sep = ''
+--theme
+require("tokyonight").setup {
+    style = "night",
+    sidebars = { "qf", "help", "NvimTree" }
+}
+
+-- lualine
+require('lualine').setup {
+    options = {
+        theme = 'tokyonight',
+        globalstatus = true,
+        section_separators = { left = '', right = '' },
+        component_separators = { left = '', right = '' },
+    },
+    sections = {
+        lualine_x = {'encoding',  {
+      'fileformat',
+      symbols = {
+        unix = '', -- e712
+        dos = '',  -- e70f
+        mac = '',  -- e711
+      }
+    }},
+        lualine_y = {'filetype'},
+        lualine_z = {'searchcount', 'location'},
+    }
+}
 
 -- numbers
 local numbers_exclude = vim.g.numbers_exclude

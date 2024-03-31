@@ -7,6 +7,7 @@ nmap("<leader><space>", ":noh<cr>")
 imap("jj", "<ESC>")
 imap("<c-e>", "<c-o>$")
 imap("<c-a>", "<c-o>^")
+nmap("<leader>b", "<c-t>")
 
 -- Windows
 nmap("<C-j>", "<c-w>j")

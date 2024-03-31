@@ -1,15 +1,10 @@
 vim.cmd([[
     filetype plugin indent on
-    colorscheme smyck
+    colorscheme tokyonight
     language en_US.UTF-8
-
-    hi StatusLine ctermbg=green
-    hi StatusLine ctermfg=black
-    hi MatchParen ctermbg=green
-    hi MatchParen ctermfg=black
 ]])
 
-vim.opt.background=dark
+vim.opt.background="dark"
 vim.opt.wildmode="longest:full,full"
 vim.opt.visualbell=true
 vim.opt.cursorline=true
