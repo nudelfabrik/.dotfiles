@@ -16,7 +16,7 @@ promptinit
 CURRENT_BG='NONE'
 if [[ $POWERLINE == "true" ]]
 then
-    SEGMENT_SEPARATOR=''
+    SEGMENT_SEPARATOR=''
     GIT_UNSTAGED="●"
     GIT_STAGED="+"
     GIT_BRANCH=""
