@@ -46,3 +46,7 @@ cmap("<M-f>", "<S-Right>")
 vim.keymap.set('n', "<Leader>t", '<CMD>lua require("FTerm").toggle()<CR>')
 vim.keymap.set('t', "<Leader>t", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
 vim.keymap.set('t', "jj", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+--
+-- You probably also want to set a keymap to toggle aerial
+vim.keymap.set("n", "<Leader>a", "<cmd>AerialToggle!<CR>")
+vim.keymap.set("n", "<Leader>A", "<cmd>AerialOpen<CR>")

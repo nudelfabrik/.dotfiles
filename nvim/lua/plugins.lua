@@ -31,13 +31,14 @@ require("lazy").setup({
     "saadparwaiz1/cmp_luasnip",
     "L3MON4D3/LuaSnip",
     "numToStr/FTerm.nvim",
+    "stevearc/aerial.nvim",
 })
 
 
 -- theme
 require("tokyonight").setup {
     style = "night",
-    sidebars = { "qf", "help", "NvimTree" },
+    sidebars = { "qf", "help", "NvimTree"},
 }
 
 -- lualine
@@ -49,14 +50,18 @@ require('lualine').setup {
         component_separators = { left = '', right = '' },
     },
     sections = {
-        lualine_x = {'encoding',  {
-      'fileformat',
-      symbols = {
-        unix = '', -- e712
-        dos = '',  -- e70f
-        mac = '',  -- e711
-      }
-    }},
+        lualine_x = {
+            "aerial",
+            {
+                'fileformat',
+                symbols = {
+                    unix = '', -- e712
+                    dos = '',  -- e70f
+                    mac = '',  -- e711
+                }
+            },
+
+        },
         lualine_y = {'filetype'},
         lualine_z = {'searchcount', 'location'},
     }
@@ -65,6 +70,7 @@ require('lualine').setup {
 -- numbers
 local numbers_exclude = vim.g.numbers_exclude
 table.insert(numbers_exclude, "NvimTree")
+table.insert(numbers_exclude, "aerial")
 vim.g.numbers_exclude = numbers_exclude
 
 -- nvim-tree.lua
@@ -129,4 +135,31 @@ require'FTerm'.setup({
         x = 0.5,
         y = 0.95,
     },
+})
+
+-- aerial outline
+require("aerial").setup({
+  -- optionally use on_attach to set keymaps when aerial has attached to a buffer
+  on_attach = function(bufnr)
+    -- Jump forwards/backwards with '{' and '}'
+    vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
+    vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
+  end,
+  layout = {
+      default_direction = "float",
+      placement = "edge",
+  },
+  float = {
+      relative = "editor",
+      override = function(conf, source_winid)
+          -- This is the config that will be passed to nvim_open_win.
+          -- Change values here to customize the layout
+          conf.row=0
+          local width = vim.api.nvim_win_get_width(source_winid)
+          conf.col=width-1
+          conf.anchor="NE"
+          return conf
+        end,
+  },
+
 })

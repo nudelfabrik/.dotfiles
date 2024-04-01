@@ -22,4 +22,7 @@ setopt CORRECT
 
 if [[ -f ~/.fzf.zsh ]] then;
     source ~/.fzf.zsh
+else
+    # Set up fzf key bindings and fuzzy completion
+    eval "$(fzf --zsh)"
 fi
