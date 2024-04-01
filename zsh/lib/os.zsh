@@ -1,5 +1,6 @@
 # Mac specifics
 if [[ $(uname) == "Darwin" ]]; then
+    alias sudo='sudo '
     alias f='open -a Finder ./'
     export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
     alias drill='dig'
@@ -14,12 +15,14 @@ fi
 
 # FreeBSD specifics
 if [[ $(uname) == "FreeBSD" ]]; then
+    alias sudo='doas '
     alias pfreload='sudo pfctl -f /etc/pf.conf'
     alias dig='drill'
 fi
 
 # Linux
 if [[ $(uname) == "Linux" ]]; then
+    alias sudo='sudo '
     export SHELL=/usr/bin/zsh
     export PATH=$PATH:$HOME/.local/bin
     alias pbcopy='xsel --clipboard --input'
