@@ -37,3 +37,7 @@ cmap("<C-f>", "<Right>")
 cmap("<C-d>", "<Delete>")
 cmap("<M-b>", "<S-Left>")
 cmap("<M-f>", "<S-Right>")
+
+vim.keymap.set('n', "<Leader>t", '<CMD>lua require("FTerm").toggle()<CR>')
+vim.keymap.set('t', "<Leader>t", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+vim.keymap.set('t', "jj", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')

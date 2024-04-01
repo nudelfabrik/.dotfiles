@@ -22,7 +22,6 @@ require("lazy").setup({
     "folke/tokyonight.nvim",
     "nvim-tree/nvim-tree.lua",
     "nvim-lualine/lualine.nvim",
-    "nudelfabrik/vim-airline-themes",
     "nvim-tree/nvim-web-devicons",
     "neovim/nvim-lspconfig",
     "hrsh7th/nvim-cmp",
@@ -31,10 +30,11 @@ require("lazy").setup({
     "hrsh7th/cmp-nvim-lsp",
     "saadparwaiz1/cmp_luasnip",
     "L3MON4D3/LuaSnip",
+    "numToStr/FTerm.nvim",
 })
 
 
---theme
+-- theme
 require("tokyonight").setup {
     style = "night",
     sidebars = { "qf", "help", "NvimTree" },
@@ -119,3 +119,14 @@ require("nvim-tree").setup {
         }
     }
 }
+
+-- terminal
+require'FTerm'.setup({
+    border = 'double',
+    dimensions  = {
+        height = 0.15,
+        width = 0.9,
+        x = 0.5,
+        y = 0.95,
+    },
+})
