@@ -1,6 +1,5 @@
 vim.cmd([[
     colorscheme tokyonight
-    language en_US.UTF-8
 ]])
 
 vim.opt.background="dark"
