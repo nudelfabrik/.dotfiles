@@ -1,6 +1,4 @@
-vim.cmd([[
-    colorscheme tokyonight
-]])
+vim.cmd.colorscheme('tokyonight')
 
 vim.opt.background="dark"
 vim.opt.wildmode="longest:full,full"

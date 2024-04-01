@@ -1,4 +1,5 @@
 require('plugins')
+require('filetypes')
 require('helpers')
 require('mappings')
 require('settings')
