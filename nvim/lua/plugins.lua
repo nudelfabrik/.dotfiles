@@ -37,7 +37,7 @@ require("lazy").setup({
 --theme
 require("tokyonight").setup {
     style = "night",
-    sidebars = { "qf", "help", "NvimTree" }
+    sidebars = { "qf", "help", "NvimTree" },
 }
 
 -- lualine
@@ -93,7 +93,29 @@ local function my_on_attach(bufnr)
 
 -- pass to setup along with your other options
 require("nvim-tree").setup {
----
-on_attach = my_on_attach,
----
+    on_attach = my_on_attach,
+    view = {
+        float = {
+            enable = true,
+        }
+    },
+    filters = {
+        dotfiles = true,
+    },
+    renderer = {
+        highlight_opened_files = "icon",
+        icons = {
+            glyphs = {
+                git = {
+                    unstaged = "",
+                    staged = "",
+                    unmerged = "",
+                    renamed = "",
+                    untracked = "",
+                    deleted = "",
+                    ignored = "",
+                },
+            }
+        }
+    }
 }
