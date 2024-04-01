@@ -34,7 +34,7 @@
 	useConfigOnly = true
 [user "github"]
 	name = Jess Scholtes
-	email = jess.scholtes@fourtytwo.xyz
+	email = jess.scholtes@jscholtes.eu
 	signingkey = E263AB832183D3D4
 [user "40Two"]
 	name = Jess Scholtes
@@ -42,6 +42,6 @@
 	signingkey = E263AB832183D3D4
 [user "Ibeo"]
 	name = Jess Scholtes
-	email = jess.scholtes@microvision.eu
+	email = jess_scholtes@microvision.com
 [pull]
 	rebase = true
