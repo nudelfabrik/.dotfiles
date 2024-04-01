@@ -1,5 +1,4 @@
 vim.cmd([[
-    filetype plugin indent on
     colorscheme tokyonight
     language en_US.UTF-8
 ]])

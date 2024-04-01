@@ -30,7 +30,12 @@ nmap("<Leader>P", "\"+P")
 vmap("<Leader>p", "\"+p")
 vmap("<Leader>P", "\"+P")
 
-vim.api.nvim_set_keymap("c", "w!", "w !sudo tee %", { noremap = true, silent = false })
+if (os.execute('which doas') == 0)
+then
+    vim.api.nvim_set_keymap("c", "w!", "w !doas tee %", { noremap = true, silent = false })
+else
+    vim.api.nvim_set_keymap("c", "w!", "w !sudo tee %", { noremap = true, silent = false })
+end
 cmap("<C-a>", "<Home>")
 cmap("<C-b>", "<Left>")
 cmap("<C-f>", "<Right>")
