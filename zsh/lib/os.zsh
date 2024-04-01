@@ -2,8 +2,9 @@
 if [[ $(uname) == "Darwin" ]]; then
     alias f='open -a Finder ./'
     export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
-    export PATH=$PATH:$HOME/Library/Python/3.7/bin
     alias drill='dig'
+    #export SSH_AUTH_SOCK="$(brew --prefix)/var/run/yubikey-agent.sock"
+    eval $(keychain --eval --noinherit -q)
 fi
 
 # Powerline env
