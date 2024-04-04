@@ -4,7 +4,7 @@ ZSH=$HOME/.dotfiles/zsh
 echo -e "Welcome @ \c"; hostname -s
 echo -e ""
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/games/bin:/opt/local/bin:/usr/local/sbin:/usr/local/go/bin
-export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
+export PATH=~/.config/lua/bin:$PATH
 
 export GOPATH=$HOME/Developer/go
 export PATH=$PATH:$GOPATH/bin

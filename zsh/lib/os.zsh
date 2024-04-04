@@ -3,6 +3,7 @@ if [[ $(uname) == "Darwin" ]]; then
     alias sudo='sudo '
     alias f='open -a Finder ./'
     export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+    export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
     alias drill='dig'
     #export SSH_AUTH_SOCK="$(brew --prefix)/var/run/yubikey-agent.sock"
     eval $(keychain --eval --noinherit -q)
