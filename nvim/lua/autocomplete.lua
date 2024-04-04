@@ -9,13 +9,22 @@ local lspconfig = require('lspconfig')
 -- jsonnet_ls, 'go install github.com/grafana/jsonnet-language-server@latest' https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#jsonnet_ls
 -- terraformls, 'go compile locally' https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#terraformls
 -- pylsp, 'pip install python-lsp-server' https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-local servers = { 'clangd', 'cmake', 'gopls', 'pylsp' }
+local servers = { 'clangd', 'cmake', 'gopls', 'pylsp', 'terraformls' }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         -- on_attach = my_custom_on_attach,
         capabilities = capabilities,
     }
 end
+
+require 'lspconfig'.jsonnet_ls.setup {
+    on_attach = function(client, bufnr)
+        client.server_capabilities.semanticTokensProvider = nil
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentRangeFormattingProvider = false
+    end,
+    capabilities = capabilities,
+}
 
 require 'lspconfig'.lua_ls.setup {
     on_init = function(client)
@@ -36,6 +45,10 @@ require 'lspconfig'.lua_ls.setup {
 
 -- luasnip setup
 local luasnip = require 'luasnip'
+
+vim.lsp.buf.format {
+    filter = function(client) return client.name ~= "jsonnet_ls" end
+    }
 
 -- Auto Format
 vim.api.nvim_create_autocmd('BufWritePre', {

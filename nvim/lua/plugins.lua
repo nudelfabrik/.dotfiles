@@ -1,14 +1,14 @@
 -- Setup Lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-    if not (vim.uv or vim.loop).fs_stat(lazypath) then
-        vim.fn.system({
-            "git",
-            "clone",
-            "--filter=blob:none",
-            "https://github.com/folke/lazy.nvim.git",
-            "--branch=stable", -- latest stable release
-            lazypath,
-        })
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable",     -- latest stable release
+        lazypath,
+    })
 end
 
 vim.opt.rtp:prepend(lazypath)
@@ -32,13 +32,27 @@ require("lazy").setup({
     "L3MON4D3/LuaSnip",
     "numToStr/FTerm.nvim",
     "stevearc/aerial.nvim",
-})
+    "google/vim-jsonnet",
+    { {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
+        config = function()
+            local configs = require("nvim-treesitter.configs")
 
+            configs.setup({
+                ensure_installed = { "vim", "vimdoc" },
+                sync_install = false,
+                highlight = { enable = true },
+                indent = { enable = true },
+            })
+        end
+    } }
+})
 
 -- theme
 require("tokyonight").setup {
     style = "night",
-    sidebars = { "qf", "help", "NvimTree"},
+    sidebars = { "qf", "help", "NvimTree" },
 }
 
 -- lualine
@@ -56,14 +70,14 @@ require('lualine').setup {
                 'fileformat',
                 symbols = {
                     unix = '', -- e712
-                    dos = '',  -- e70f
-                    mac = '',  -- e711
+                    dos = '', -- e70f
+                    mac = '', -- e711
                 }
             },
 
         },
-        lualine_y = {'filetype'},
-        lualine_z = {'searchcount', 'location'},
+        lualine_y = { 'filetype' },
+        lualine_z = { 'searchcount', 'location' },
     }
 }
 
@@ -95,7 +109,7 @@ local function my_on_attach(bufnr)
     -- custom mappings
     vim.keymap.set('n', '<C-t>', api.tree.change_root_to_parent, opts('Up'))
     vim.keymap.set('n', 's', api.node.open.vertical, opts('Open: Vertical Split'))
-  end
+end
 
 -- pass to setup along with your other options
 require("nvim-tree").setup {
@@ -127,9 +141,9 @@ require("nvim-tree").setup {
 }
 
 -- terminal
-require'FTerm'.setup({
-    border = 'double',
-    dimensions  = {
+require 'FTerm'.setup({
+    border     = 'double',
+    dimensions = {
         height = 0.15,
         width = 0.9,
         x = 0.5,
@@ -139,27 +153,29 @@ require'FTerm'.setup({
 
 -- aerial outline
 require("aerial").setup({
-  -- optionally use on_attach to set keymaps when aerial has attached to a buffer
-  on_attach = function(bufnr)
-    -- Jump forwards/backwards with '{' and '}'
-    vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
-    vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
-  end,
-  layout = {
-      default_direction = "float",
-      placement = "edge",
-  },
-  float = {
-      relative = "editor",
-      override = function(conf, source_winid)
-          -- This is the config that will be passed to nvim_open_win.
-          -- Change values here to customize the layout
-          conf.row=0
-          local width = vim.api.nvim_win_get_width(source_winid)
-          conf.col=width-1
-          conf.anchor="NE"
-          return conf
+    -- optionally use on_attach to set keymaps when aerial has attached to a buffer
+    on_attach = function(bufnr)
+        -- Jump forwards/backwards with '{' and '}'
+        vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
+        vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
+    end,
+    layout = {
+        default_direction = "float",
+        placement = "edge",
+    },
+    float = {
+        relative = "editor",
+        override = function(conf, source_winid)
+            -- This is the config that will be passed to nvim_open_win.
+            -- Change values here to customize the layout
+            conf.row = 0
+            local width = vim.api.nvim_win_get_width(source_winid)
+            conf.col = width - 1
+            conf.anchor = "NE"
+            return conf
         end,
-  },
+    },
 
 })
+
+vim.g.jsonnet_fmt_on_save = 0
