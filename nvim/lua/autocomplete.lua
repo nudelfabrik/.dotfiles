@@ -9,7 +9,7 @@ local lspconfig = require('lspconfig')
 -- jsonnet_ls, 'go install github.com/grafana/jsonnet-language-server@latest' https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#jsonnet_ls
 -- terraformls, 'go compile locally' https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#terraformls
 -- pylsp, 'pip install python-lsp-server' https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-local servers = { 'clangd', 'cmake', 'gopls', 'pylsp', 'terraformls' }
+local servers = { 'clangd', 'cmake', 'gopls', 'pylsp', 'terraformls', 'jdtls' }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         -- on_attach = my_custom_on_attach,
@@ -18,11 +18,16 @@ for _, lsp in ipairs(servers) do
 end
 
 require 'lspconfig'.jsonnet_ls.setup {
-    on_attach = function(client, bufnr)
+    on_attach = function(client)
         client.server_capabilities.semanticTokensProvider = nil
         client.server_capabilities.documentFormattingProvider = false
         client.server_capabilities.documentRangeFormattingProvider = false
     end,
+    capabilities = capabilities,
+}
+
+require 'lspconfig'.groovyls.setup {
+    cmd = { "java", "-jar", HOME .. "/.config/groovy/groovy-language-server-all.jar" },
     capabilities = capabilities,
 }
 
