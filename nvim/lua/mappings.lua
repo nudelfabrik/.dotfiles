@@ -1,52 +1,57 @@
 vim.g.mapleader = " "
-nmap("<leader>f", ":NvimTreeToggle<cr>")
-nmap("<leader>w", "<C-w>v<C-w>l")
-nmap("<leader><space>", ":noh<cr>")
+Nmap("<leader><space>", ":noh<cr>")
 
 -- remap
-imap("jj", "<ESC>")
-imap("<c-e>", "<c-o>$")
-imap("<c-a>", "<c-o>^")
-nmap("<leader>b", "<c-t>")
+Imap("jj", "<ESC>")
+Imap("<c-e>", "<c-o>$")
+Imap("<c-a>", "<c-o>^")
+Nmap("<leader>b", "<c-t>")
 
 -- Windows
-nmap("<C-j>", "<c-w>j")
-nmap("<C-k>", "<c-w>k")
-nmap("<C-h>", "<c-w>h")
-nmap("<C-l>", "<c-w>l")
-vim.opt.splitbelow=true
-vim.opt.splitright=true
+Nmap("<C-j>", "<c-w>j")
+Nmap("<C-k>", "<c-w>k")
+Nmap("<C-h>", "<c-w>h")
+Nmap("<C-l>", "<c-w>l")
+vim.opt.splitbelow = true
+vim.opt.splitright = true
 
 -- Markdown Headlines
-nmap("<leader>1", "yypVr=")
-nmap("<leader>2", "yypVr-")
+Nmap("<leader>1", "yypVr=")
+Nmap("<leader>2", "yypVr-")
 
 -- Yanking
-nmap("<Leader>y", ":reg<CR>")
-vmap("<Leader>y", "\"+y")
-vmap("<Leader>d", "\"+d")
-nmap("<Leader>p", "\"+p")
-nmap("<Leader>P", "\"+P")
-vmap("<Leader>p", "\"+p")
-vmap("<Leader>P", "\"+P")
+Nmap("<Leader>y", ":reg<CR>")
+Vmap("<Leader>y", "\"+y")
+Vmap("<Leader>d", "\"+d")
+Nmap("<Leader>p", "\"+p")
+Nmap("<Leader>P", "\"+P")
+Vmap("<Leader>p", "\"+p")
+Vmap("<Leader>P", "\"+P")
 
+-- sudo/doas write
 if (os.execute('which doas') == 0)
 then
     vim.api.nvim_set_keymap("c", "w!", "w !doas tee %", { noremap = true, silent = false })
 else
     vim.api.nvim_set_keymap("c", "w!", "w !sudo tee %", { noremap = true, silent = false })
 end
-cmap("<C-a>", "<Home>")
-cmap("<C-b>", "<Left>")
-cmap("<C-f>", "<Right>")
-cmap("<C-d>", "<Delete>")
-cmap("<M-b>", "<S-Left>")
-cmap("<M-f>", "<S-Right>")
 
+-- Move in Command mode
+Cmap("<C-a>", "<Home>")
+Cmap("<C-b>", "<Left>")
+Cmap("<C-f>", "<Right>")
+Cmap("<C-d>", "<Delete>")
+Cmap("<M-b>", "<S-Left>")
+Cmap("<M-f>", "<S-Right>")
+
+-- Plugins
+-- NvimTree
+Nmap("<leader>f", ":NvimTreeToggle<cr>")
+
+-- Fterm
 vim.keymap.set('n', "<Leader>t", '<CMD>lua require("FTerm").toggle()<CR>')
-vim.keymap.set('t', "<Leader>t", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
 vim.keymap.set('t', "jj", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
---
--- You probably also want to set a keymap to toggle aerial
+
+-- Aerial
 vim.keymap.set("n", "<Leader>a", "<cmd>AerialToggle!<CR>")
 vim.keymap.set("n", "<Leader>A", "<cmd>AerialOpen<CR>")

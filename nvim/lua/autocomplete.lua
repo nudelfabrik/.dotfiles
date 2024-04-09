@@ -1,14 +1,20 @@
+--
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
+--
+-- Links to LSP Installation documentation
 -- clang, compile-commands complicated? https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#clangd
 -- cmake, 'pip install cmake-language-server' https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#cmake
 -- jsonnet_ls, 'go install github.com/grafana/jsonnet-language-server@latest' https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#jsonnet_ls
--- terraformls, 'go compile locally' https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#terraformls
+-- terraformls, install via apt/brew https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#terraformls
 -- pylsp, 'pip install python-lsp-server' https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+--
+
+-- LSPs without any further config
 local servers = { 'clangd', 'cmake', 'gopls', 'pylsp', 'terraformls', 'jdtls' }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
@@ -17,7 +23,8 @@ for _, lsp in ipairs(servers) do
     }
 end
 
-require 'lspconfig'.jsonnet_ls.setup {
+-- LSPs WITH extra config required
+lspconfig.jsonnet_ls.setup {
     on_attach = function(client)
         client.server_capabilities.semanticTokensProvider = nil
         client.server_capabilities.documentFormattingProvider = false
@@ -26,12 +33,12 @@ require 'lspconfig'.jsonnet_ls.setup {
     capabilities = capabilities,
 }
 
-require 'lspconfig'.groovyls.setup {
+lspconfig.groovyls.setup {
     cmd = { "java", "-jar", HOME .. "/.config/groovy/groovy-language-server-all.jar" },
     capabilities = capabilities,
 }
 
-require 'lspconfig'.lua_ls.setup {
+lspconfig.lua_ls.setup {
     on_init = function(client)
         client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
             runtime = { version = 'LuaJIT' },
@@ -48,9 +55,6 @@ require 'lspconfig'.lua_ls.setup {
     capabilities = capabilities,
 }
 
--- luasnip setup
-local luasnip = require 'luasnip'
-
 vim.lsp.buf.format {
     filter = function(client) return client.name ~= "jsonnet_ls" end
     }
@@ -63,7 +67,11 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 	end,
 })
 
+-- luasnip setup
+local luasnip = require 'luasnip'
+
 -- nvim-cmp setup
+-- Autocompletion
 local cmp = require 'cmp'
 cmp.setup {
     snippet = {
@@ -131,6 +139,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+-- Custom DiagnosticSigns
 local function sign_define(args)
   vim.fn.sign_define(args.name, {
     texthl = args.name,

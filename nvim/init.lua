@@ -1,3 +1,4 @@
+-- see in ./lua/*.lua
 require('plugins')
 require('filetypes')
 require('helpers')

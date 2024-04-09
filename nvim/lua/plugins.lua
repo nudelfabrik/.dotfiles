@@ -1,4 +1,4 @@
--- Setup Lazy
+-- Setup Pluginmanager Lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
     vim.fn.system({
@@ -141,7 +141,7 @@ require("nvim-tree").setup {
 }
 
 -- terminal
-require 'FTerm'.setup({
+require 'FTerm'.setup {
     border     = 'double',
     dimensions = {
         height = 0.15,
@@ -149,10 +149,10 @@ require 'FTerm'.setup({
         x = 0.5,
         y = 0.95,
     },
-})
+}
 
 -- aerial outline
-require("aerial").setup({
+require("aerial").setup {
     -- optionally use on_attach to set keymaps when aerial has attached to a buffer
     on_attach = function(bufnr)
         -- Jump forwards/backwards with '{' and '}'
@@ -176,6 +176,6 @@ require("aerial").setup({
         end,
     },
 
-})
+}
 
 vim.g.jsonnet_fmt_on_save = 0
