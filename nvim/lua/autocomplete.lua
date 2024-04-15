@@ -34,7 +34,7 @@ lspconfig.jsonnet_ls.setup {
 }
 
 lspconfig.groovyls.setup {
-    cmd = { "java", "-jar", HOME .. "/.config/groovy/groovy-language-server-all.jar" },
+    cmd = { "java", "-jar", HOME .. "/.lsp/groovy/groovy-language-server-all.jar" },
     capabilities = capabilities,
 }
 
