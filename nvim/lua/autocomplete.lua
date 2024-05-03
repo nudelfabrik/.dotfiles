@@ -55,15 +55,16 @@ lspconfig.lua_ls.setup {
     capabilities = capabilities,
 }
 
-vim.lsp.buf.format {
-    filter = function(client) return client.name ~= "jsonnet_ls" end
-    }
-
 -- Auto Format
 vim.api.nvim_create_autocmd('BufWritePre', {
 	buffer = vim.fn.bufnr(),
 	callback = function()
-		vim.lsp.buf.format({ timeout_ms = 3000 })
+		vim.lsp.buf.format(
+            {
+                timeout_ms = 3000,
+                filter = function(client) return client.name ~= "jsonnet_ls" end
+            }
+        )
 	end,
 })
 
