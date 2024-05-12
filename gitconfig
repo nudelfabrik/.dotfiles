@@ -32,6 +32,10 @@
 	followRedirects = true
 [user]
 	useConfigOnly = true
+[user "gitlab"]
+	name = Jess
+	email = usrbinwhoami@fourtytwo.xyz
+	signingkey = E263AB832183D3D4
 [user "github"]
 	name = Jess Scholtes
 	email = jess.scholtes@jscholtes.eu
