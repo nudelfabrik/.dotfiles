@@ -45,7 +45,7 @@ lspconfig.lua_ls.setup {
             -- Make the server aware of Neovim runtime files
             workspace = {
                 checkThirdParty = false,
-                library = { vim.env.VIMRUNTIME}
+                library = { vim.env.VIMRUNTIME }
             },
         })
     end,
@@ -57,15 +57,21 @@ lspconfig.lua_ls.setup {
 
 -- Auto Format
 vim.api.nvim_create_autocmd('BufWritePre', {
-	buffer = vim.fn.bufnr(),
-	callback = function()
-		vim.lsp.buf.format(
+    buffer = vim.fn.bufnr(),
+    callback = function()
+        vim.lsp.buf.format(
             {
                 timeout_ms = 3000,
-                filter = function(client) return client.name ~= "jsonnet_ls" end
+                filter = function(client)
+                    if client.name == "jsonnet_ls" then
+                        return false
+                    else
+                        return true
+                    end
+                end
             }
         )
-	end,
+    end,
 })
 
 -- luasnip setup
@@ -119,37 +125,38 @@ cmp.setup {
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
 vim.api.nvim_create_autocmd('LspAttach', {
-  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-  callback = function(ev)
-    -- Enable completion triggered by <c-x><c-o>
-    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+    group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+    callback = function(ev)
+        -- Enable completion triggered by <c-x><c-o>
+        vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
-    -- Buffer local mappings.
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local opts = { buffer = ev.buf }
-    vim.keymap.set('n', '<Leader>d', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', '<Leader>D', vim.lsp.buf.hover, opts)
-    vim.keymap.set('n', '<Leader>wa', vim.lsp.buf.add_workspace_folder, opts)
-    vim.keymap.set('n', '<Leader>wr', vim.lsp.buf.remove_workspace_folder, opts)
-    vim.keymap.set('n', '<Leader>wl', function()
-      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-    end, opts)
-    vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, opts)
-    vim.keymap.set({ 'n', 'v' }, '<Leader>ca', vim.lsp.buf.code_action, opts)
-    vim.keymap.set('n', '<Leader>re', vim.lsp.buf.references, opts)
-  end,
+        -- Buffer local mappings.
+        -- See `:help vim.lsp.*` for documentation on any of the below functions
+        local opts = { buffer = ev.buf }
+        vim.keymap.set('n', '<Leader>d', vim.lsp.buf.definition, opts)
+        vim.keymap.set('n', '<Leader>D', vim.lsp.buf.hover, opts)
+        vim.keymap.set('n', '<Leader>wa', vim.lsp.buf.add_workspace_folder, opts)
+        vim.keymap.set('n', '<Leader>wr', vim.lsp.buf.remove_workspace_folder, opts)
+        vim.keymap.set('n', '<Leader>wl', function()
+            print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+        end, opts)
+        vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, opts)
+        vim.keymap.set({ 'n', 'v' }, '<Leader>ca', vim.lsp.buf.code_action, opts)
+        vim.keymap.set('n', '<Leader>re', vim.lsp.buf.references, opts)
+        vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+    end,
 })
 
 -- Custom DiagnosticSigns
 local function sign_define(args)
-  vim.fn.sign_define(args.name, {
-    texthl = args.name,
-    text = args.text,
-    numhl = ''
-  })
+    vim.fn.sign_define(args.name, {
+        texthl = args.name,
+        text = args.text,
+        numhl = ''
+    })
 end
 
-sign_define({name = 'DiagnosticSignError', text = ''})
-sign_define({name = 'DiagnosticSignWarn', text = ''})
-sign_define({name = 'DiagnosticSignHint', text = ''})
-sign_define({name = 'DiagnosticSignInfo', text = ''})
+sign_define({ name = 'DiagnosticSignError', text = '' })
+sign_define({ name = 'DiagnosticSignWarn', text = '' })
+sign_define({ name = 'DiagnosticSignHint', text = '' })
+sign_define({ name = 'DiagnosticSignInfo', text = '' })
