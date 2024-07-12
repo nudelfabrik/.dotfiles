@@ -15,13 +15,25 @@ local lspconfig = require('lspconfig')
 --
 
 -- LSPs without any further config
-local servers = { 'clangd', 'cmake', 'gopls', 'pylsp', 'terraformls', 'jdtls', 'yamlls' }
+local servers = { 'clangd', 'cmake', 'gopls', 'pylsp', 'terraformls', 'jdtls' }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         -- on_attach = my_custom_on_attach,
         capabilities = capabilities,
     }
 end
+
+
+lspconfig.ansiblels.setup {
+    settings = {
+        ansible = {
+            validation = {
+                enabled = false,
+            }
+        }
+    },
+    capabilities = capabilities,
+}
 
 -- LSPs WITH extra config required
 lspconfig.jsonnet_ls.setup {

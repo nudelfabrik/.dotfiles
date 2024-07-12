@@ -33,6 +33,7 @@ require("lazy").setup({
     "numToStr/FTerm.nvim",
     "stevearc/aerial.nvim",
     "google/vim-jsonnet",
+    "mfussenegger/nvim-ansible",
     { {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
