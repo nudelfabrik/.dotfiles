@@ -46,7 +46,7 @@ zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion::complete:*' cache-path ~/.oh-my-zsh/cache/
 
 # Don't complete uninteresting users
-zstyle ":completion:*" users bene git
+zstyle ":completion:*" users git
 
 if [ "x$COMPLETION_WAITING_DOTS" = "xtrue" ]; then
   expand-or-complete-with-dots() {
