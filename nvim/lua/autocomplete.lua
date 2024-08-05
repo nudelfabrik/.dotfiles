@@ -23,7 +23,6 @@ for _, lsp in ipairs(servers) do
     }
 end
 
-
 lspconfig.ansiblels.setup {
     settings = {
         ansible = {
@@ -75,7 +74,7 @@ vim.api.nvim_create_autocmd('BufWritePre', {
             {
                 timeout_ms = 3000,
                 filter = function(client)
-                    if client.name == "jsonnet_ls" then
+                    if client.name == "jsonnet_ls" or client.name == "jdtls" then
                         return false
                     else
                         return true
