@@ -15,39 +15,47 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Install Plugins
 require("lazy").setup({
-    "tpope/vim-fugitive",
-    "myusuf3/numbers.vim",
-    "tpope/vim-surround",
-    "airblade/vim-gitgutter",
-    "folke/tokyonight.nvim",
-    "nvim-tree/nvim-tree.lua",
-    "nvim-lualine/lualine.nvim",
-    "nvim-tree/nvim-web-devicons",
-    "neovim/nvim-lspconfig",
-    "hrsh7th/nvim-cmp",
-    "hrsh7th/cmp-buffer",
-    "hrsh7th/cmp-path",
-    "hrsh7th/cmp-nvim-lsp",
-    "saadparwaiz1/cmp_luasnip",
-    "L3MON4D3/LuaSnip",
-    "numToStr/FTerm.nvim",
-    "stevearc/aerial.nvim",
-    "google/vim-jsonnet",
-    "mfussenegger/nvim-ansible",
-    { {
-        "nvim-treesitter/nvim-treesitter",
-        build = ":TSUpdate",
-        config = function()
-            local configs = require("nvim-treesitter.configs")
+    spec = {
+        "tpope/vim-fugitive",
+        "myusuf3/numbers.vim",
+        "tpope/vim-surround",
+        "airblade/vim-gitgutter",
+        "folke/tokyonight.nvim",
+        "nvim-tree/nvim-tree.lua",
+        "nvim-lualine/lualine.nvim",
+        "nvim-tree/nvim-web-devicons",
+        "neovim/nvim-lspconfig",
+        "hrsh7th/nvim-cmp",
+        "hrsh7th/cmp-buffer",
+        "hrsh7th/cmp-path",
+        "hrsh7th/cmp-nvim-lsp",
+        "saadparwaiz1/cmp_luasnip",
+        "L3MON4D3/LuaSnip",
+        "numToStr/FTerm.nvim",
+        "stevearc/aerial.nvim",
+        "google/vim-jsonnet",
+        "mfussenegger/nvim-ansible",
+        { {
+            "nvim-treesitter/nvim-treesitter",
+            build = ":TSUpdate",
+            config = function()
+                local configs = require("nvim-treesitter.configs")
 
-            configs.setup({
-                ensure_installed = { "vim", "vimdoc", "markdown", "terraform" },
-                sync_install = false,
-                highlight = { enable = true },
-                indent = { enable = true },
-            })
-        end
-    } }
+                configs.setup({
+                    ensure_installed = { "vim", "vimdoc", "markdown", "terraform" },
+                    sync_install = false,
+                    highlight = { enable = true },
+                    indent = { enable = true },
+                })
+            end
+        } }
+    },
+    rocks = {
+        enabled = false
+    },
+    pkg = {
+        enabled = false
+    }
 })
 
 -- theme
