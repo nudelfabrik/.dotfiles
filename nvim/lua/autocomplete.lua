@@ -15,13 +15,28 @@ local lspconfig = require('lspconfig')
 --
 
 -- LSPs without any further config
-local servers = { 'clangd', 'cmake', 'gopls', 'pylsp', 'terraformls', 'jdtls' }
+local servers = { 'clangd', 'cmake', 'gopls', 'terraformls', 'jdtls' }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         -- on_attach = my_custom_on_attach,
         capabilities = capabilities,
     }
 end
+
+lspconfig.pylsp.setup {
+    settings = {
+        pylsp = {
+            plugins = {
+                pycodestyle = {
+                    enabled = false
+                },
+                flake8 = {
+                    enabled = true
+                }
+            }
+        }
+    }
+}
 
 lspconfig.ansiblels.setup {
     settings = {
