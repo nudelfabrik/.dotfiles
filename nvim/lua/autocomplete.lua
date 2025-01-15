@@ -30,7 +30,8 @@ lspconfig.pylsp.setup {
                     enabled = false
                 },
                 flake8 = {
-                    enabled = true
+                    enabled = true,
+                    config = "~/.flake8"
                 }
             }
         }
