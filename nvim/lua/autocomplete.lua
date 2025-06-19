@@ -9,7 +9,6 @@ local lspconfig = require('lspconfig')
 -- Links to LSP Installation documentation
 -- clang, compile-commands complicated? https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#clangd
 -- cmake, 'pip install cmake-language-server' https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#cmake
--- jsonnet_ls, 'go install github.com/grafana/jsonnet-language-server@latest' https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#jsonnet_ls
 -- terraformls, install via apt/brew https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#terraformls
 -- pylsp, 'pip install python-lsp-server' https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 --
@@ -46,21 +45,6 @@ lspconfig.ansiblels.setup {
             }
         }
     },
-    capabilities = capabilities,
-}
-
--- LSPs WITH extra config required
-lspconfig.jsonnet_ls.setup {
-    on_attach = function(client)
-        client.server_capabilities.semanticTokensProvider = nil
-        client.server_capabilities.documentFormattingProvider = false
-        client.server_capabilities.documentRangeFormattingProvider = false
-    end,
-    capabilities = capabilities,
-}
-
-lspconfig.groovyls.setup {
-    cmd = { "java", "-jar", HOME .. "/.lsp/groovy/groovy-language-server-all.jar" },
     capabilities = capabilities,
 }
 
