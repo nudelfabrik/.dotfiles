@@ -68,7 +68,7 @@ promt_git() {
               -e "${repo_path}/MERGE_HEAD" || \
               -e "${repo_path}/rebase" || -e "${repo_path}/rebase-apply" || -e "${repo_path}/rebase-merge" || -e "${repo_path}/../.dotest" ]]; then
             prompt_segment red black
-        else  
+        else
             if [[ -n $(git status -s 2> /dev/null) ]];
             then
                 prompt_segment yellow black
@@ -132,17 +132,10 @@ if [[ -n $virtualenv_path ]]; then
 fi
 }
 
-prompt_btool() {
-if [[ -v BTOOL_WORKSPACE_NAME ]]; then
-    prompt_segment magenta black "$(echo $BTOOL_WORKSPACE_NAME)"
-fi
-}
-
 ## Main prompt
 build_prompt() {
   RETVAL=$?
   prompt_status
-  prompt_btool
   prompt_virtualenv
   prompt_context
   prompt_dir
