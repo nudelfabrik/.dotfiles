@@ -25,8 +25,15 @@ end
 lspconfig.pylsp.setup {
     settings = {
         pylsp = {
+            configurationSources = { 'flake8' },
             plugins = {
                 pycodestyle = {
+                    enabled = false
+                },
+                pyflakes = {
+                    enabled = false
+                },
+                mccabe = {
                     enabled = false
                 },
                 flake8 = {
